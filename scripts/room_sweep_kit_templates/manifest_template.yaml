@@ -1,0 +1,91 @@
+# One phone, laptop built-in speakers. Copy to manifest.yaml; fill measured coordinates.
+# Sequential mono takes, independent unknown offsets and clocks. No timestamps needed.
+# P1-P3 are positions of the SAME phone, never simultaneous channels.
+# C1 is one extra check position, withheld from every fitted quantity.
+# Add S4... for additional placements; M1... names remain accepted for older sessions.
+room_id: my_room
+fs_hz: 48000  # analysis rate; native 44100 Hz WAVs are converted, never relabelled
+acquisition: sequential_phone
+# Unknown is distinct from a checked setting. Fill from this device/app/build.
+capture_identity:
+  device: unknown             # exact model/variant
+  os_version: unknown         # OS version/build
+  app: unknown
+  app_version: unknown
+  unprocessed_source:
+    requested: unknown        # e.g. UNPROCESSED; not inferred from an app's "raw" label
+    actual: unknown           # actual source/route if exposed by app
+    support_query: unknown    # supported / unsupported / unknown
+    evidence: null            # saved API query/log reference required for a known result
+  agc: unknown                # off / on / unknown; enabled processing rejects
+  noise_suppression: unknown
+  echo_cancellation: unknown
+  gain: unknown
+  microphone_route: unknown
+  mic_hole: unknown
+  orientation: unknown       # bottom mic toward laptop; record actual pose/height
+  case_and_stand: unknown
+  native_format: unknown      # actual WAV rate/PCM bit depth/channels
+recorder: {}                  # legacy descriptive settings are still accepted
+speaker:
+  model: unknown             # laptop model and speaker reference point
+  firmware: unknown
+  playback_device: unknown
+  connection_codec: internal speakers; no Bluetooth
+  volume: unknown            # fixed moderate setting after pilot
+  eq_limiter: unknown        # disable enhancements, spatial sound, EQ, normalization
+  facing: unknown            # front-facing wall/direction per S; fixed while phone moves
+  height_m: unknown          # table/stand speaker height per S; also fill XYZ z below
+  lid_angle: unknown         # fixed per placement
+  driver_separation_m: unknown  # mark both drivers; mono route, midpoint is nominal source
+  factory_protection: unknown  # retain protection; disable optional player/vendor effects
+# LAPTOP-CHAIN EVIDENCE: pilot table/stand clearance; an unresolved close REF must reject.
+# Optional pilot linkage; pilot recordings stay out of normal sweep rows:
+# capture_qa: capture_qa.yaml
+room:
+  dims_m: {x: 0.0, y: 0.0, z: 0.0}  # replace zeros with room dimensions
+  surfaces: {floor: "", ceiling: "", walls: ""}
+obstacles: []  # e.g. {name: desk, min_xyz: [1,1,0], size_xyz: [1.2,.6,.75], material: wood}
+positions:
+  speakers:
+    S1: [0.0, 0.0, 0.0]
+    S2: [0.0, 0.0, 0.0]
+    S3: [0.0, 0.0, 0.0]
+  mics:
+    P1: [0.0, 0.0, 0.0]
+    P2: [0.0, 0.0, 0.0]
+    P3: [0.0, 0.0, 0.0]
+    C1: [0.0, 0.0, 0.0]  # not symmetric to P1-P3; >=1 m from walls; clear path unless intended
+    # REF strongly recommended for physical sounds: they bypass the laptop speaker.
+    # Optional REF_S1: [x, y, z], 0.3 m on-axis from S1; similarly for other S.
+takes:
+  - {file: noise_floor.wav, type: noise, mic: P1}
+  - {file: S1_P1_sweep.wav, type: sweep, speaker: S1, mic: P1}
+  - {file: S1_P2_sweep.wav, type: sweep, speaker: S1, mic: P2}
+  - {file: S1_P3_sweep.wav, type: sweep, speaker: S1, mic: P3}
+  - {file: S2_P1_sweep.wav, type: sweep, speaker: S2, mic: P1}
+  - {file: S2_P2_sweep.wav, type: sweep, speaker: S2, mic: P2}
+  - {file: S2_P3_sweep.wav, type: sweep, speaker: S2, mic: P3}
+  - {file: S3_P1_sweep.wav, type: sweep, speaker: S3, mic: P1}
+  - {file: S3_P2_sweep.wav, type: sweep, speaker: S3, mic: P2}
+  - {file: S3_P3_sweep.wav, type: sweep, speaker: S3, mic: P3}
+  - {file: S1_C1_sweep.wav, type: sweep, speaker: S1, mic: C1, role: check}
+  - {file: S1_P1_real_example.wav, type: real, speaker: S1, mic: P1, label: example}
+  - {file: S1_P2_real_example.wav, type: real, speaker: S1, mic: P2, label: example}
+  - {file: S1_P3_real_example.wav, type: real, speaker: S1, mic: P3, label: example}
+  # Each real take is a different performance. Add real takes at any measured S/P pair.
+  # Keep C1 out of all fitting/real/REF rows. Additional check sweeps also use role: check.
+  # If no check was recorded, remove its take and unused position, never relabel it as fit.
+  # Optional: {file: S1_REF_sweep.wav, type: REF, speaker: S1, mic: REF_S1}
+  # Same label across positions enables automatic spectral/temporal matching.
+  # Optional hint per real take: event_window_s: [12.3, 12.8] in THAT WAV's seconds.
+  # The interval selects a region; its full decay is retained. No sync is implied.
+  # Alternative: event_index: 0 (zero-based from dry/event_selection.json).
+  # Use one hint form; missing/ambiguous evidence rejects with an actionable message.
+  # Optional event_pre_roll_s: 0.1, event_post_roll_s: 1.5 (cover measured decay).
+  # Optional event_merge_gap_s: 0.5 for multi-part sounds (knocks, footsteps): bursts closer than
+  # this form one event. The default 0.15 s splits them, and then no hint can select the whole sound.
+  # clock_drift_ppm only with independent calibration of THIS real take; otherwise omit.
+# Use the JSON shipped with the actual playback: v1 (4 s tail) or opt-in v2 (8 s).
+excitation: {type: ess, kit: sweep_kit.json}
+notes: ""

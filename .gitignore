@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Generated capture kit (produce with scripts/room_sweep_kit.py)
+room_recording_kit/
+
+# Run outputs
+runs/
+out/
+*.wav

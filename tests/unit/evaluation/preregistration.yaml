@@ -1,0 +1,60 @@
+format: sensorsim-room-preregistration/2
+id: w1-eval-fix-20261008
+base: 6dde6cf
+result_label: proxy result
+measured_results: none
+scope: F1-F10; no renderer or training changes
+statistical_design:
+  E1: group-label permutation with identical observed and null group counts
+  joint_rule: >-
+    Maximum of MMD divided by its permutation q95 and the 90-percent-coverage
+    band-SMD ratio. Calibrate this joint maximum by permutation rank, alpha 0.05.
+    Estimate the marginal scales symmetrically from observed plus permutations.
+    The real-only half-split envelope is descriptive, never the decision threshold.
+  E1_views: both band statistics and frozen CNN embedding must pass
+  E2: unchanged grouped logistic L2=1; five folds; 2000 bootstraps; median of three seeds
+  seeds: [20261008, 20261009, 20261010]
+  permutations: 999
+  real_resplit_cap: 200
+calibration:
+  generator: review grouped Gaussian proxy; 15 groups each side; 6 windows/group; 120 dimensions
+  take_variance_fraction: 0.2
+  window_variance_fraction: 0.8
+  null_runs: 300
+  shift_runs: 100
+  seeds: SeedSequence([15, 20, int(shift*1000), replicate]); test seed 20261008
+  shift: 0.6 SD in first 10 of 120 dimensions
+  calibration_permutations: 199
+  null_acceptance: rejection count within scipy.stats.binom.interval(0.95,300,0.05)
+  power_acceptance: at least 80 of 100 shifted runs rejected
+framing:
+  generator: review TRUTH room plus session simulator; 6 s reference vs 2 s synthetic
+  replicates: 3
+  seed: 9191; SeedSequence([9191, replicate, side, group])
+  groups_per_side: 15
+  view: identical one-second event-centred windows; one per group; no padding
+  same_pipeline_acceptance: E1 and E2 pass in every replicate for both views
+  shifted_control: +6 dB peaking EQ at 3000 Hz, Q 1.5 on synthetic
+  shift_acceptance: E1 and E2 fail in every replicate
+training_path:
+  contract: call nn.make_example through one adapter with frozen training configuration
+  framing: pair reference event peak position to synthetic window event peak; no padding
+  sampling: one window per group; at most 256 groups per class
+spike_in:
+  artefacts: [+2 dB peaking EQ at 3000 Hz Q 1.5, 8-bit uniform PCM quantization]
+  fingerprint_source: S06 common preprocessing and quantization sensitivity hypothesis
+  seeds: [20261008, 20261009, 20261010]
+  power: conditional detected fraction over three seeds at actual retained group counts
+  decision: >-
+    Each artefact must cause E1 or E2 fail for every seed. Otherwise any pass becomes
+    inconclusive (insufficient power). Report underpowered honestly; this satisfies
+    the spike-in acceptance reporting contract and does not certify realism.
+original_wp1:
+  registration: original_preregistration.yaml
+  thresholds: unchanged WP1(a-d) using the labelled raw sliding-window diagnostic
+  required: all four original proxy controls pass; old acceptance remains historical evidence
+acceptance:
+  pass: calibration, power, framing, shift, spike-in reporting contract, original WP1(a-d) all satisfy their rules
+  failure: any registered numeric criterion fails
+  missing_dependency: inconclusive
+  run_count: one; no threshold changes after results

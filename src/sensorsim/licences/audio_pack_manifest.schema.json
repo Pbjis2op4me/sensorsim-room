@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sensorsim-room.invalid/schemas/audio-pack-manifest-v1.json",
+  "title": "Commercial training audio pack manifest",
+  "description": "One provenance and rights record per Freesound audio file. CC0 and CC BY 4.0 only.",
+  "type": "object",
+  "required": ["schema_version", "purpose", "items"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "purpose": {"const": "commercial_training"},
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "freesound_id", "uploader", "source_url", "registry_id", "license_id",
+          "license_url", "modifications", "path", "sha256", "verified_on"
+        ],
+        "properties": {
+          "freesound_id": {"type": "string", "pattern": "^[0-9]+$"},
+          "uploader": {"type": "string", "minLength": 1},
+          "source_url": {"type": "string", "format": "uri", "pattern": "^https://(www\\.)?freesound\\.org/sounds/[0-9]+/?$"},
+          "registry_id": {"enum": ["freesound-cc0", "freesound-cc-by-4"]},
+          "license_id": {"enum": ["CC0-1.0", "CC-BY-4.0"]},
+          "license_url": {"enum": [
+            "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en",
+            "https://creativecommons.org/licenses/by/4.0/legalcode.en"
+          ]},
+          "modifications": {
+            "oneOf": [
+              {"type": "string"},
+              {"type": "array", "items": {"type": "string"}}
+            ]
+          },
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "verified_on": {"type": "string", "format": "date"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

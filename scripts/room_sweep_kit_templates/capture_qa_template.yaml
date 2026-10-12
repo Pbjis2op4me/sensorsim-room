@@ -1,0 +1,14 @@
+# Optional pilot sidecar: copy to capture_qa.yaml, fill measured XYZ and filenames.
+# Keep these pilot rows separate from production manifest takes. All four repeats
+# belong to each file. A/B/L/C at fixed P1, then P2, P3 and return P1 D = seven takes.
+schema_version: "1"
+assets: capture_qa_assets.json
+takes:
+  - {id: A, file: QA_P1_A.wav, level: nominal, position: P1, source_xyz_m: [0,0,0], receiver_xyz_m: [1,0,0], noise_file: QA_P1_noise.wav}
+  - {id: B, file: QA_P1_B.wav, level: nominal, position: P1, source_xyz_m: [0,0,0], receiver_xyz_m: [1,0,0], noise_file: QA_P1_noise.wav}
+  - {id: L, file: QA_P1_L.wav, level: quiet, position: P1, source_xyz_m: [0,0,0], receiver_xyz_m: [1,0,0], noise_file: QA_P1_noise.wav}
+  - {id: C, file: QA_P1_C.wav, level: nominal, position: P1, source_xyz_m: [0,0,0], receiver_xyz_m: [1,0,0], noise_file: QA_P1_noise.wav}
+  - {id: P2, file: QA_P2.wav, level: nominal, position: P2, source_xyz_m: [0,0,0], receiver_xyz_m: [2,0,0], noise_file: QA_P2_noise.wav}
+  - {id: P3, file: QA_P3.wav, level: nominal, position: P3, source_xyz_m: [0,0,0], receiver_xyz_m: [3,0,0], noise_file: QA_P3_noise.wav}
+  - {id: D, file: QA_P1_D.wav, level: nominal, position: P1, source_xyz_m: [0,0,0], receiver_xyz_m: [1,0,0], noise_file: QA_P1_return_noise.wav}
+notes: "Hardware volume, mic route, gain and orientation unchanged; no normalization."

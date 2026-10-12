@@ -1,0 +1,86 @@
+format: sensorsim-room-preregistration/1
+id: w1-eval-truth-acceptance-2026-10-08
+owner: w1-eval
+registered_at_local_date: 2026-10-08
+scope:
+  work_package: WP1
+  acceptance_parts: [a, b, c, d]
+  specification: SYNTHESIS.md sections 4 WP1 and 5 E1-E3
+  primary_result_label: proxy result
+  proxy_definition: >-
+    TRUTH proxy: project-generated procedural transient sources, convolved with a
+    pyroomacoustics shoebox RIR, then captured by sensorsim.acoustics.room.session_sim.
+    This is model-based evidence and is not measured room or device performance.
+data:
+  source_content: project-generated procedural broadband transient only
+  room: pyroomacoustics shoebox, 6.0 x 5.0 x 2.8 metres, absorption 0.25, no furniture
+  source_position_m: [1.2, 2.4, 1.2]
+  microphone_position_m: [2.2, 2.4, 1.2]
+  session_sim: case A, canonical sweep kit, fixed seed, session simulator default phone impairments
+  device_analysis_rate_hz: 16000
+  features:
+    window_seconds: 1.0
+    hop_seconds: 0.25
+    band_statistics: 120
+    pooled_embedding: 96
+  groups:
+    per_class: 15
+    group_unit: one independently seeded source take; all windows from a take remain in one fold
+    shared_across_conditions: false
+  controls:
+    sensitivity_eq:
+      reference: unmodified TRUTH proxy takes
+      synthetic_side: peaking EQ, +6 dB at 3000 Hz, Q 1.5
+    sensitivity_mulaw:
+      reference: unmodified TRUTH proxy takes
+      synthetic_side: 8 kHz-rate mu-law encode/decode at mu 255, returned to 16 kHz
+    specificity:
+      class_a: independent unmodified draw from the same TRUTH proxy generator
+      class_b: independent unmodified draw from the same TRUTH proxy generator
+split:
+  method: grouped five-fold cross-validation; group IDs are disjoint across training and held-out folds
+  source_groups_per_class: 15
+  train_fit_tuning: no real data or acceptance groups used to fit, calibrate, tune, or mine a recognizer
+seeds:
+  source_generation: 20261008
+  c2st_fold_assignment: 20261008
+  cluster_bootstrap: [20261008, 20261009, 20261010]
+  mmd_permutation: 20261008
+  cnn_embedding_fixture: 20261008
+  project_json_replay: 20261008
+counts:
+  c2st_folds: 5
+  cluster_bootstrap_replicates: 2000
+  mmd_group_permutations: 999
+  real_vs_real_resplits_cap: 200
+  confidence_level: 0.95
+thresholds:
+  sensitivity:
+    each_artifact: [eq_3khz, mulaw_8khz]
+    tested_representations: [band_statistics, pooled_embedding]
+    lower_auc_bound_minimum: 0.70
+  specificity:
+    tested_representations: [band_statistics, pooled_embedding]
+    interval_must_contain: 0.5
+    upper_auc_bound_maximum: 0.65
+  attribution:
+    ranked_bands: 3
+    required_frequency_hz: 3000
+  reproducibility:
+    rule: repeat the same project evaluation and require byte-identical out/evaluation.json
+  c2st_general_decision_rule:
+    pass: point_auc_lte_0.60_and_cluster_bootstrap_upper_95_lte_0.70
+    fail: cluster_bootstrap_lower_95_gte_0.60
+    otherwise: inconclusive
+decision_rule:
+  acceptance_pass: all parts a, b, c, and d pass for both C2ST representations
+  sensitivity_part_a: each artifact has lower cluster-bootstrap 95 percent AUC bound at least 0.70
+  specificity_part_b: both independent same-generator classes have intervals containing 0.5 and upper bound at most 0.65
+  attribution_part_c: one of the top three absolute standardized-mean-difference bands contains 3000 Hz
+  reproducibility_part_d: serialized evaluation.json bytes are identical on replay
+  missing_proxy_dependency_or_failed_assertion: inconclusive unless a registered numeric rule was violated
+  measured_take_recall: unavailable until user takes and a trained deployment model are provided; never inferred from this proxy run
+reporting:
+  all acceptance figures: proxy
+  measured_results: none expected in this run
+  confidence_intervals: Clopper-Pearson for recall; cluster-bootstrap percentile 95 percent for C2ST AUC

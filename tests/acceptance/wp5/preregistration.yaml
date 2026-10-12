@@ -1,0 +1,53 @@
+programme: sensorsim-room-in-distribution
+work_package: WP5
+version: 1
+registered_at: 2026-10-08
+status: frozen-before-acceptance
+scope:
+  - versioned absolute-level Pi MEMS profiles
+  - Pi in-distribution chain selection and SPL level reference
+  - capture format and feature-path checks that can run without hardware
+  - real-take floor and recall checks are pending until user data arrives
+data:
+  split: deterministic generated fixtures only; no train/validation examples or user recordings
+  provenance: proxy result (model-based)
+  fixture_seed: 20261008
+  sample_rate_hz: 16000
+  real_data_available: false
+tests:
+  - id: WP5-A-01
+    name: INMP441 sensitivity
+    fixture: 1 kHz sine, 2 seconds, peak amplitude 1.0 represents 94 dB SPL peak-sine reference
+    profile: pi5_inmp441/1 nominal, no sampled variation
+    threshold: fitted output sine peak is -26.0 dBFS within 0.1 dB
+    decision: pass iff absolute error <= 0.1 dB
+  - id: WP5-A-02
+    name: absolute self-noise
+    fixture: digital silence, 3 seconds, seed 20261008
+    profile: pi5_inmp441/1 nominal, no sampled variation
+    threshold: output A-weighted RMS is -87.0 dBFS within 0.5 dB, sine-peak-referenced
+    decision: pass iff absolute error <= 0.5 dB
+  - id: WP5-A-03
+    name: Pi processing reachability
+    fixture: inspect and exercise every Pi profile
+    threshold: codec, AGC, noise suppression, and packet loss are absent and are not called
+    decision: pass iff profile fields disable all four and guarded calls observe none
+  - id: WP5-D-01
+    name: S16 conversion and edge feature parity
+    fixture: deterministic 1 kHz S32 tone, signed extreme samples, and a generated S16 device-format WAV
+    threshold: S32-to-S16 tone amplitude agrees within 0.01 dB; extreme samples map exactly; max absolute feature difference between training samples and WAV decode is <= 1e-5
+    decision: pass iff all conversion and feature comparisons meet their thresholds
+  - id: WP5-B-C
+    name: measured floor and real held-out recall
+    fixture: user target takes and pre/post-take quiet from the deployed Pi and MEMS
+    threshold: per synthesis WP5(b,c); no threshold changes permitted after real results are seen
+    decision: pending until real data is available; do not infer a pass from proxies
+capture:
+  tone_level_check: when an acoustic calibration tone is supplied, compare measured 1 kHz peak dBFS to profile sensitivity plus the declared tone SPL; report as measured
+  quiet_floor_check: measure pre-take and post-take quiet separately and together; report as measured and do not label less than 30 minutes as FA/hour
+  hardware_capture: I2S clocking and physical 24/32-bit-to-S16 conversion remain unverified without hardware
+acceptance_decision:
+  implementation: pass only if WP5-A-01 through WP5-A-03 and WP5-D-01 pass
+  measured_data: pending; acceptance of real floor/recall remains open
+  any_threshold_failure: fail
+  unavailable_required_input: inconclusive or pending, never pass

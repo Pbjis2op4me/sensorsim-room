@@ -1,0 +1,1405 @@
+# Audited at the listed sources on 2026-10-08. Historical exclusions remain excluded.
+schema_version: 1
+policy:
+  checked_on: '2026-10-08'
+  commercial_training_allowlist:
+  - ship
+  - plug-in
+  evidence_scope: Source pages, metadata and package licence files were checked on 2026-10-08. A source hash fingerprints
+    each checked page/license. Ambiguous, non-commercial, ShareAlike, unavailable or otherwise unclear assets remain
+    never-use unless an explicit internal exception is stated.
+  no_audio_or_data_downloaded: true
+  no_third_party_assets_copied_into_repository: true
+never_imports:
+- gpuRIR
+assets:
+- id: python-annotated-types
+  name: annotated-types
+  version_or_hash: 0.8.0
+  url: https://raw.githubusercontent.com/annotated-types/annotated-types/v0.8.0/LICENSE
+  license_id: MIT
+  evidence_quote: 'The MIT License (MIT)
+
+    Copyright (c) 2022 the contributors
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: pydantic dependency
+  source_license_sha256: fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d
+- id: python-certifi
+  name: certifi
+  version_or_hash: 2026.7.22
+  url: https://raw.githubusercontent.com/certifi/python-certifi/2026.07.22/LICENSE
+  license_id: MPL-2.0
+  evidence_quote: Bundle of CA Root Certificates
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: netCDF4 dependency
+  source_license_sha256: e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7
+- id: python-cftime
+  name: cftime
+  version_or_hash: 1.6.6
+  url: https://raw.githubusercontent.com/Unidata/cftime/v1.6.6rel/LICENSE
+  license_id: MIT
+  evidence_quote: Copyright 2008 Jeffrey Whitaker
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: netCDF4 dependency
+  source_license_sha256: 7fdd0c2647de9ed5aa549c21c46778374867793c2f874497b5480df22c7778ff
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 1
+  source_http_status: 200
+  source_sha256: 7fdd0c2647de9ed5aa549c21c46778374867793c2f874497b5480df22c7778ff
+- id: python-cloudpickle
+  name: cloudpickle
+  version_or_hash: 3.1.2
+  url: https://raw.githubusercontent.com/cloudpipe/cloudpickle/v3.1.2/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: 'This module was extracted from the `cloud` package, developed by
+
+    PiCloud, Inc.
+
+    Copyright (c) 2015, Cloudpickle contributors.'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: Runtime dependency of the optional recognizer extra in the installed dependency closure
+  source_license_sha256: 3029ea34173e9fdc233ad315dc6b100bd1ea71f529b1c1af97664a272fdc55f5
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 3029ea34173e9fdc233ad315dc6b100bd1ea71f529b1c1af97664a272fdc55f5
+- id: python-cython
+  name: Cython
+  version_or_hash: 3.3.0
+  url: https://raw.githubusercontent.com/cython/cython/3.3.0/LICENSE.txt
+  license_id: Apache-2.0
+  evidence_quote: 'Apache License
+
+    Version 2.0, January 2004
+
+    https://www.apache.org/licenses/
+
+    TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+    1. Definitions.'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: pyroomacoustics dependency
+  source_license_sha256: 9568a2b155e66ac3e0ba1fd80b52b827b9460e6cf6f233125e7cbca8e206ddc3
+  installed_distribution_audit:
+    license_files_read: 0
+    native_binaries_in_distribution: 19
+  source_http_status: 200
+  source_sha256: 9568a2b155e66ac3e0ba1fd80b52b827b9460e6cf6f233125e7cbca8e206ddc3
+- id: python-filelock
+  name: filelock
+  version_or_hash: 3.32.3
+  url: https://raw.githubusercontent.com/tox-dev/filelock/3.32.3/LICENSE
+  license_id: MIT
+  evidence_quote: 'MIT License
+
+    Copyright (c) 2025 Bernát Gábor and contributors
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: torch dependency
+  source_license_sha256: 608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 608c89d5060ae9921adccf3236695bc654a9946e12323ef6c021dfa04e294d48
+- id: python-fsspec
+  name: fsspec
+  version_or_hash: 2026.7.0
+  url: https://raw.githubusercontent.com/fsspec/filesystem_spec/2026.7.0/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: 'BSD 3-Clause License
+
+    Copyright (c) 2018, Martin Durant
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: torch dependency
+  source_license_sha256: 2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94
+- id: python-iniconfig
+  name: iniconfig
+  version_or_hash: 2.3.0
+  url: https://raw.githubusercontent.com/pytest-dev/iniconfig/v2.3.0/LICENSE
+  license_id: MIT
+  evidence_quote: The MIT License (MIT)
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: python-package
+  role: pytest dependency
+  source_license_sha256: 3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 3409fa91f7ace557894632676656e32264fe5ef7581535725dc9a23774551bd4
+- id: python-jinja2
+  name: Jinja2
+  version_or_hash: 3.1.6
+  url: https://raw.githubusercontent.com/pallets/jinja/3.1.6/LICENSE.txt
+  license_id: BSD-3-Clause
+  evidence_quote: 'Copyright 2007 Pallets
+
+    Redistribution and use in source and binary forms, with or without
+
+    modification, are permitted provided that the following conditions are
+
+    met:'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: torch dependency
+  source_license_sha256: 3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b
+- id: python-joblib
+  name: joblib
+  version_or_hash: 1.6.0
+  url: https://raw.githubusercontent.com/joblib/joblib/1.6.0/LICENSE.txt
+  license_id: BSD-3-Clause
+  evidence_quote: 'BSD 3-Clause License
+
+    Copyright (c) 2008-2021, The joblib developers.
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: scikit-learn dependency
+  source_license_sha256: 42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a
+- id: python-markupsafe
+  name: MarkupSafe
+  version_or_hash: 3.0.3
+  url: https://raw.githubusercontent.com/pallets/markupsafe/3.0.3/LICENSE.txt
+  license_id: BSD-3-Clause
+  evidence_quote: 'Copyright 2010 Pallets
+
+    Redistribution and use in source and binary forms, with or without
+
+    modification, are permitted provided that the following conditions are
+
+    met:'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: Jinja2 dependency
+  source_license_sha256: 489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 1
+  source_http_status: 200
+  source_sha256: 489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea
+- id: python-mpmath
+  name: mpmath
+  version_or_hash: 1.3.0
+  url: https://raw.githubusercontent.com/mpmath/mpmath/1.3.0/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: 'Copyright (c) 2005-2021 Fredrik Johansson and mpmath contributors
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: sympy dependency
+  source_license_sha256: c26cae81da4508e5e249985777a33821f183223ebb74d7f8cfbf90fe7eef2fb7
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: c26cae81da4508e5e249985777a33821f183223ebb74d7f8cfbf90fe7eef2fb7
+- id: python-narwhals
+  name: narwhals
+  version_or_hash: 2.26.0
+  url: https://raw.githubusercontent.com/narwhals-dev/narwhals/v2.26.0/LICENSE.md
+  license_id: MIT
+  evidence_quote: 'MIT License
+
+    Copyright (c) 2024 to present, Marco Gorelli
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: Runtime dependency of the optional recognizer extra in the installed dependency closure
+  source_license_sha256: 811445f30147b8f0c9d444c9025fd528f9532c54b7b83f6e2368473dc91cfdf0
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 811445f30147b8f0c9d444c9025fd528f9532c54b7b83f6e2368473dc91cfdf0
+- id: python-netcdf4
+  name: netCDF4
+  version_or_hash: 1.7.4
+  url: https://raw.githubusercontent.com/Unidata/netcdf4-python/v1.7.4rel/LICENSE
+  license_id: MIT
+  evidence_quote: Copyright 2008 Jeffrey Whitaker
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: optional [sofa] extra
+  source_license_sha256: 7fdd0c2647de9ed5aa549c21c46778374867793c2f874497b5480df22c7778ff
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 10
+    bundled_native_component_rows: 9
+    inventory_evidence: The job evidence file installed_license_inventory.txt and netcdf_native_audit.txt record
+      paths and hashes.
+  bundled_components_note: 10 native objects plus sibling netcdf4.libs shared libraries observed by ELF dependency
+    inspection; only one MIT package licence file was present. Audit notes component licences below.
+  source_http_status: 200
+  source_sha256: 7fdd0c2647de9ed5aa549c21c46778374867793c2f874497b5480df22c7778ff
+- id: python-networkx
+  name: networkx
+  version_or_hash: 3.6.1
+  url: https://raw.githubusercontent.com/networkx/networkx/networkx-3.6.1/LICENSE.txt
+  license_id: BSD-3-Clause
+  evidence_quote: NetworkX is distributed with the 3-clause BSD license.
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: torch dependency
+  source_license_sha256: 3cf7c3a179d817b23b8b8568211769fefdf93797d207d984b8b2fa24d0220b33
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 3cf7c3a179d817b23b8b8568211769fefdf93797d207d984b8b2fa24d0220b33
+- id: python-numpy
+  name: numpy
+  version_or_hash: 2.5.3
+  url: https://raw.githubusercontent.com/numpy/numpy/v2.5.3/LICENSE.txt
+  license_id: BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0
+  evidence_quote: 'Copyright (c) 2005-2025, NumPy Developers.
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: mandatory runtime [project.dependencies]
+  source_license_sha256: 1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491
+  installed_distribution_audit:
+    license_files_read: 20
+    native_binaries_in_distribution: 22
+    inventory_evidence: The job evidence file installed_license_inventory.txt records each license-file path and
+      SHA-256.
+  source_http_status: 200
+  source_sha256: 1be1df33863f97a7bc1c4d67980bd6c69c9a6fef0a5ee76e6ad6cb91e56e8491
+- id: python-packaging
+  name: packaging
+  version_or_hash: '26.3'
+  url: https://raw.githubusercontent.com/pypa/packaging/26.3/LICENSE
+  license_id: Apache-2.0 OR BSD-2-Clause
+  evidence_quote: licenses found in LICENSE.APACHE or LICENSE.BSD
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: python-package
+  role: test/build dependency
+  source_license_sha256: cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48
+  installed_distribution_audit:
+    license_files_read: 5
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48
+- id: python-pluggy
+  name: pluggy
+  version_or_hash: 1.6.0
+  url: https://raw.githubusercontent.com/pytest-dev/pluggy/1.6.0/LICENSE
+  license_id: MIT
+  evidence_quote: The MIT License (MIT)
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: python-package
+  role: pytest dependency
+  source_license_sha256: d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: d6b65e6c213a5d0b577911d34d6e5949b9f59d76c238c5071a2f3fc16cfb2606
+- id: python-pydantic
+  name: pydantic
+  version_or_hash: 2.13.5
+  url: https://raw.githubusercontent.com/pydantic/pydantic/v2.13.5/LICENSE
+  license_id: MIT
+  evidence_quote: The MIT License (MIT)
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: mandatory runtime [project.dependencies]
+  source_license_sha256: a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3
+- id: python-pydantic-core
+  name: pydantic_core
+  version_or_hash: 2.46.5
+  url: https://raw.githubusercontent.com/pydantic/pydantic-core/main/LICENSE
+  license_id: MIT
+  evidence_quote: 'The MIT License (MIT)
+
+    Copyright (c) 2022 Samuel Colvin
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: pydantic dependency
+  source_license_sha256: 2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 1
+    source_license_sha256_installed: 2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a
+  source_http_status: 200
+  source_sha256: 2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a
+- id: python-pygments
+  name: Pygments
+  version_or_hash: 2.21.0
+  url: https://raw.githubusercontent.com/pygments/pygments/2.21.0/LICENSE
+  license_id: BSD-2-Clause
+  evidence_quote: 'Copyright (c) 2006-2022 by the respective authors (see AUTHORS file).
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: python-package
+  role: pytest dependency
+  source_license_sha256: a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17
+  installed_distribution_audit:
+    license_files_read: 2
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17
+- id: python-pyroomacoustics
+  name: pyroomacoustics
+  version_or_hash: 0.10.1
+  url: https://raw.githubusercontent.com/LCAV/pyroomacoustics/v0.10.1/LICENSE
+  license_id: MIT
+  evidence_quote: Permission is hereby granted, free of charge, to any person obtaining a copy
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: mandatory runtime [project.dependencies]; RT60 helper
+  source_license_sha256: 0922c9a0c1f5bb35a1e0df7b56954864e27cfc625fc3b041acde0707ce797e46
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 2
+  bundled_components_note: The wheel includes libroom with Eigen; the package MIT licence file omits Eigen MPL-2.0.
+    Separate component row follows.
+  source_http_status: 200
+  source_sha256: 0922c9a0c1f5bb35a1e0df7b56954864e27cfc625fc3b041acde0707ce797e46
+- id: python-pytest
+  name: pytest
+  version_or_hash: 9.1.1
+  url: https://raw.githubusercontent.com/pytest-dev/pytest/9.1.1/LICENSE
+  license_id: MIT
+  evidence_quote: 'The MIT License (MIT)
+
+    Copyright (c) 2004 Holger Krekel and others
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of'
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: python-package
+  role: optional [test] extra
+  source_license_sha256: ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: ca836a5f9ecca3b2f350230faa20a48fb8b145653b5568d784862df864706b9b
+- id: python-pyyaml
+  name: PyYAML
+  version_or_hash: 6.0.3
+  url: https://raw.githubusercontent.com/yaml/pyyaml/6.0.3/LICENSE
+  license_id: MIT
+  evidence_quote: 'Copyright (c) 2017-2021 Ingy döt Net
+
+    Copyright (c) 2006-2016 Kirill Simonov
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: mandatory runtime [project.dependencies]
+  source_license_sha256: 8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 1
+  source_http_status: 200
+  source_sha256: 8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4
+- id: python-scikit-learn
+  name: scikit-learn
+  version_or_hash: 1.9.1
+  url: https://raw.githubusercontent.com/scikit-learn/scikit-learn/1.9.1/COPYING
+  license_id: BSD-3-Clause
+  evidence_quote: 'BSD 3-Clause License
+
+    Copyright (c) 2007-2026 The scikit-learn developers.
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: optional [recognizer] and [test] extras
+  source_license_sha256: 50d6a9d340f19ab355609917993114daf5f47e3161067bcf34955bbd05cd9cb0
+  installed_distribution_audit:
+    license_files_read: 4
+    native_binaries_in_distribution: 69
+    inventory_evidence: The job evidence file installed_license_inventory.txt records the main BSD notice, bundled
+      MIT notices and LIBLINEAR notice.
+  source_http_status: 200
+  source_sha256: 50d6a9d340f19ab355609917993114daf5f47e3161067bcf34955bbd05cd9cb0
+- id: python-scipy
+  name: scipy
+  version_or_hash: 1.18.1
+  url: https://raw.githubusercontent.com/scipy/scipy/v1.18.1/LICENSE.txt
+  license_id: BSD-3-Clause
+  evidence_quote: 'Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers.
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: mandatory runtime [project.dependencies]
+  source_license_sha256: 221e59f5e910fd7f94e44f0dac77436a11338c285c6346232e4a850a50da0e94
+  installed_distribution_audit:
+    license_files_read: 3
+    native_binaries_in_distribution: 107
+    inventory_evidence: The job evidence file installed_license_inventory.txt records each license-file path and
+      SHA-256; native rows follow.
+  bundled_components_note: 3 in-wheel licence files read, including OpenBLAS/LAPACK and GCC libgfortran/libquadmath
+    notices; 107 native binaries. Separate component rows follow.
+  source_http_status: 200
+  source_sha256: 221e59f5e910fd7f94e44f0dac77436a11338c285c6346232e4a850a50da0e94
+- id: python-setuptools
+  name: setuptools
+  version_or_hash: 78.1.0
+  url: https://raw.githubusercontent.com/pypa/setuptools/v78.1.0/LICENSE
+  license_id: MIT
+  evidence_quote: 'Permission is hereby granted, free of charge, to any person obtaining a copy
+
+    of this software and associated documentation files (the "Software"), to'
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: python-package
+  role: build-system requirement
+  source_license_sha256: 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741
+  installed_distribution_audit:
+    license_files_read: 22
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741
+- id: python-sympy
+  name: sympy
+  version_or_hash: 1.14.0
+  url: https://raw.githubusercontent.com/sympy/sympy/1.14.0/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: 'Copyright (c) 2006-2023 SymPy Development Team
+
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: torch dependency
+  source_license_sha256: 07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286
+  installed_distribution_audit:
+    license_files_read: 3
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 07a5e9819f727b4986ad2829c7a29a6320d42575f720eb24d71b7fef573a0286
+- id: python-threadpoolctl
+  name: threadpoolctl
+  version_or_hash: 3.7.0
+  url: https://raw.githubusercontent.com/joblib/threadpoolctl/3.7.0/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: Redistribution and use in source and binary forms, with or without modification, are permitted
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: mandatory runtime [project.dependencies]
+  source_license_sha256: 81ac619075248b06e53660b652d10e485f4675f5d0ae0f97ea22370da1f7e23b
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 81ac619075248b06e53660b652d10e485f4675f5d0ae0f97ea22370da1f7e23b
+- id: python-torch
+  name: torch
+  version_or_hash: 2.14.1+cpu
+  url: https://raw.githubusercontent.com/pytorch/pytorch/v2.14.1/LICENSE
+  license_id: Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT
+  evidence_quote: 'From PyTorch:
+
+    Copyright (c) 2016-     Facebook, Inc            (Adam Paszke)
+
+    Copyright (c) 2014-     Facebook, Inc            (Soumith Chintala)'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  role: optional [nn] extra
+  source_license_sha256: bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43
+  installed_distribution_audit:
+    license_files_read: 88
+    native_binaries_in_distribution: 11
+    license_expression: Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0
+      AND MIT
+    inventory_evidence: The job evidence file installed_license_inventory.txt records each license-file path and
+      SHA-256.
+    native_component_note: 88 nested licence files were read locally; CPU wheel metadata declares a permissive aggregate
+      expression. No CUDA libraries are bundled in this CPU wheel.
+  bundled_components_note: 90 in-wheel licence files read, including 11 native binaries; CPU build, no NVIDIA runtime
+    libraries. Per-file paths and hashes are in the job evidence inventory.
+  source_http_status: 200
+  source_sha256: bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43
+- id: python-typing-extensions
+  name: typing_extensions
+  version_or_hash: 4.16.0
+  url: https://raw.githubusercontent.com/python/typing_extensions/4.16.0/LICENSE
+  license_id: PSF-2.0
+  evidence_quote: 'A. HISTORY OF THE SOFTWARE
+
+    ==========================
+
+    Python was created in the early 1990s by Guido van Rossum at Stichting'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: pydantic/torch dependency
+  source_license_sha256: 3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf
+- id: python-typing-inspection
+  name: typing-inspection
+  version_or_hash: 0.4.4
+  url: https://raw.githubusercontent.com/pydantic/typing-inspection/v0.4.4/LICENSE
+  license_id: MIT
+  evidence_quote: 'MIT License
+
+    Copyright (c) Pydantic Services Inc. 2025 to present
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy'
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: python-package
+  role: pydantic dependency
+  source_license_sha256: 804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3
+  installed_distribution_audit:
+    license_files_read: 1
+    native_binaries_in_distribution: 0
+  source_http_status: 200
+  source_sha256: 804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3
+- id: scipy-openblas
+  name: OpenBLAS bundled by SciPy
+  version_or_hash: SHA-256 2a5b4c1a6311873c59132b2ceaaf3c26258a17350b7cd27ea8782a47e3322981
+  url: https://raw.githubusercontent.com/OpenMathLib/OpenBLAS/develop/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: Copyright (c) 2011-2014, The OpenBLAS Project
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: bundled-native-library
+  source_sha256: 190b5a9c8d9723fe958ad33916bd7346d96fab3c5ea90832bb02d854f620fcff
+  source_http_status: 200
+  note: SciPy wheel LICENSE.txt includes the OpenBLAS notice.
+  installed_in: scipy==1.18.1 wheel
+- id: scipy-lapack
+  name: LAPACK bundled through SciPy OpenBLAS
+  version_or_hash: SHA-256 2a5b4c1a6311873c59132b2ceaaf3c26258a17350b7cd27ea8782a47e3322981
+  url: https://raw.githubusercontent.com/Reference-LAPACK/lapack/master/LICENSE
+  license_id: BSD-3-Clause-Open-MPI
+  evidence_quote: Copyright (c) 1992-2025 The University of Tennessee and The University of Tennessee Research Foundation.
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: bundled-native-library
+  source_sha256: a1e742e31b6793e83cd36a98ed2db993ec291d0e4be79e9c0520c4d8aef7aa3a
+  source_http_status: 200
+  note: SciPy wheel LICENSE.txt states BSD-3-Clause-Open-MPI.
+  installed_in: scipy==1.18.1 wheel; bundled with OpenBLAS
+- id: scipy-libgfortran
+  name: GCC libgfortran runtime bundled by SciPy
+  version_or_hash: SHA-256 468e71e59e1d784821a76702e5ecd1e0dbcfc024499f74a552d1bea4b26f27ad
+  url: https://raw.githubusercontent.com/gcc-mirror/gcc/master/COPYING.RUNTIME
+  license_id: GPL-3.0-or-later WITH GCC-exception-3.1
+  evidence_quote: This GCC Runtime Library Exception ("Exception") is an additional permission under section 7 of
+    the GNU General Public License, version 3 ("GPLv3").
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: bundled-native-library
+  source_sha256: 9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74
+  source_http_status: 200
+  note: The SciPy wheel carries the GPL text and GCC Runtime Library Exception.
+  installed_in: scipy==1.18.1 wheel; scipy.linalg._fblas
+- id: scipy-libquadmath
+  name: GCC libquadmath runtime bundled by SciPy
+  version_or_hash: SHA-256 a9307bbaa353623fa014e8b682d50c4629f5e5c7d61daa9a8652f7d165cd421a
+  url: https://raw.githubusercontent.com/gcc-mirror/gcc/master/COPYING.LIB
+  license_id: LGPL-2.1-or-later
+  evidence_quote: GNU LESSER GENERAL PUBLIC LICENSE Version 2.1, February 1999
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: bundled-native-library
+  source_sha256: a9bdde5616ecdd1e980b44f360600ee8783b1f99b8cc83a2beb163a0a390e861
+  source_http_status: 200
+  note: SciPy wheel LICENSE.txt includes the libquadmath terms.
+  installed_in: scipy==1.18.1 wheel; scipy.linalg._fblas
+- id: eigen-pyroomacoustics
+  name: Eigen embedded in pyroomacoustics libroom extension
+  version_or_hash: SHA-256 f075fa846ecc296a54af0a5f6b413bbe5fb1ad2541f7c4b33f18359ac55a1ad1
+  url: https://gitlab.com/libeigen/eigen/-/raw/master/COPYING.README?ref_type=heads
+  license_id: MPL-2.0
+  evidence_quote: Eigen is primarily licensed under the Mozilla Public License 2.0.
+  checked_on: '2026-10-08'
+  disposition: ship
+  kind: bundled-native-library
+  source_sha256: b680dc46db7b3d9e49931bf918e85a43ec3c790f64b4eee212ec5beeed1b02d5
+  source_http_status: 200
+  note: pyroomacoustics is a REQUIRED runtime dependency, not an extra or test-only package. The installed wheel
+    contains libroom Eigen use but has only a MIT license file; no Eigen source/notice was found in its file inventory.
+    A dependency declaration does not bundle that binary. The distributor of a compiled wheel/environment must satisfy
+    MPL 2.0 sections 3.1, 3.2 and 3.4, including source availability and notices.
+  installed_in: pyroomacoustics==0.10.1; libroom
+- id: freesound-cc0
+  name: Freesound CC0 sound files
+  version_or_hash: CC0-1.0
+  url: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
+  license_id: CC0-1.0
+  evidence_quote: Legal Code - CC0 1.0 Universal
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: license-class
+  manifestable: true
+  source_sha256: b43732f4c1463b087cf10d4daf8d8766514b2bf8f21bc5ef50905f95be227726
+  source_http_status: 200
+  note: Opt-in per item; retain ID, uploader, source URL, file hash and modifications.
+- id: freesound-cc-by-4
+  name: Freesound CC BY 4.0 sound files
+  version_or_hash: CC-BY-4.0
+  url: https://creativecommons.org/licenses/by/4.0/legalcode.en
+  license_id: CC-BY-4.0
+  evidence_quote: Legal Code - Attribution 4.0 International
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: license-class
+  manifestable: true
+  source_sha256: 58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650
+  source_http_status: 200
+  note: Opt-in per item with attribution; model-weight attribution remains a counsel question.
+- id: freesound-cc-by-nc-4
+  name: Freesound CC BY-NC 4.0 sound files
+  version_or_hash: CC-BY-NC-4.0
+  url: https://creativecommons.org/licenses/by-nc/4.0/legalcode.en
+  license_id: CC-BY-NC-4.0
+  evidence_quote: Legal Code - Attribution-NonCommercial 4.0 International
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: license-class
+  source_sha256: 3307f50ad87c95b551b6a9c4e30c7fc4408f15e5b0e957542b2883f24df74474
+  source_http_status: 200
+  note: Negative control; commercial manifest must reject.
+- id: freesound-sampling-plus
+  name: Legacy Freesound Sampling+ sound files
+  version_or_hash: legacy Sampling+
+  url: https://freesound.org/help/faq/
+  license_id: LicenseRef-Sampling-Plus
+  evidence_quote: Sampling+ is "retired"
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: license-class
+  source_sha256: 05a659f09c30fe46fcca7b849f7d3d08845d70931683311077d84d8cb5156b1c
+  source_http_status: 200
+  note: Legacy terms are not accepted.
+- id: freesound-platform
+  name: Freesound per-sound license metadata
+  version_or_hash: FAQ/API checked 2026-10-08
+  url: https://freesound.org/docs/api/resources_apiv1.html
+  license_id: LicenseRef-per-sound
+  evidence_quote: The license under which the sound is available to you.
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: metadata-service
+  source_sha256: 36a5ca039347df014da1c677b9e3ed8a8c2e86341b7ca830ff74a18a89edb75e
+  source_http_status: 200
+  note: A manifest item must attest to the current source sound page and uploader.
+- id: fuss-cc0-clips
+  name: FUSS FSD source clips
+  version_or_hash: FUSS release; license-document commit 059092220b08e745ca29c78029e499d554933e3f; archive version
+    not separately marked
+  url: https://raw.githubusercontent.com/google-research/sound-separation/059092220b08e745ca29c78029e499d554933e3f/datasets/fuss/FUSS_license_doc/README.md
+  license_id: CC0-1.0
+  evidence_quote: are designated Creative Commons (CC0)
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: dataset
+  source_sha256: e209c761183e564f0de499b8f2ce8b477cb9513c779c2237bc70313d9ae0e0d7
+  source_http_status: 200
+  note: No download occurred in this task.
+- id: fuss-prepared
+  name: FUSS prepared mixtures/stems
+  version_or_hash: FUSS release; license-document commit 059092220b08e745ca29c78029e499d554933e3f; archive version
+    not separately marked
+  url: https://raw.githubusercontent.com/google-research/sound-separation/059092220b08e745ca29c78029e499d554933e3f/datasets/fuss/FUSS_license_doc/README.md
+  license_id: CC-BY-4.0
+  evidence_quote: released under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: dataset
+  source_sha256: e209c761183e564f0de499b8f2ce8b477cb9513c779c2237bc70313d9ae0e0d7
+  source_http_status: 200
+  note: Attribution required; programme prefers its own renders of source clips.
+- id: fuss-rir-archive
+  name: FUSS simulated RIR archive
+  version_or_hash: FUSS release; license-document commit 059092220b08e745ca29c78029e499d554933e3f; archive version
+    not separately marked
+  url: https://raw.githubusercontent.com/google-research/sound-separation/059092220b08e745ca29c78029e499d554933e3f/datasets/fuss/FUSS_license_doc/README.md
+  license_id: LicenseRef-not-separately-stated
+  evidence_quote: Simulated room impulse responses (RIRs)
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: e209c761183e564f0de499b8f2ce8b477cb9513c779c2237bc70313d9ae0e0d7
+  source_http_status: 200
+  note: No separate RIR licence statement; do not use as a target room.
+- id: fsd50k-packaged
+  name: FSD50K packaged audio
+  version_or_hash: Zenodo 4060432 v1.0
+  url: https://zenodo.org/records/4060432
+  license_id: LicenseRef-mixed-CC-and-per-item
+  evidence_quote: If you'd like to use FSD50K for commercial purposes, please contact Eduardo Fonseca and Frederic
+    Font [curator contact as given on the source page; e-mail addresses redacted].
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: 45ec7cd34517344fb05b1efe19bc873c2bd0926d8aa2a187499315fe378f624c
+  source_http_status: 200
+  note: Mixed per-clip terms; do not use the package without curator permission.
+- id: reverbdb-rirs
+  name: BUT ReverbDB measured RIRs
+  version_or_hash: BUT_ReverbDB_rel_19_06; source page checked 2026-10-08
+  url: https://speech.fit.vut.cz/software/but-speech-fit-reverb-database
+  license_id: CC-BY-4.0
+  evidence_quote: CC-BY 4.0 license
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: measured-rir
+  source_sha256: 487de93e70f8374242e372d1125888bcc8cd2ebb17de4689036b23f176de2091
+  source_http_status: 200
+  note: Validation only; no RIR data or derived renders in shipped outputs.
+- id: reverbdb-room-noise
+  name: BUT ReverbDB environmental noise
+  version_or_hash: BUT_ReverbDB_rel_19_06; source page checked 2026-10-08
+  url: https://speech.fit.vut.cz/software/but-speech-fit-reverb-database
+  license_id: CC-BY-4.0
+  evidence_quote: CC-BY 4.0 license
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: audio-dataset
+  source_sha256: 487de93e70f8374242e372d1125888bcc8cd2ebb17de4689036b23f176de2091
+  source_http_status: 200
+  note: Candidate user-installed bed pack; per-item attribution and hash required.
+- id: reverbdb-ldc-parts
+  name: HUB5/SRE retransmissions in ReverbDB
+  version_or_hash: BUT_ReverbDB_rel_19_06; source page checked 2026-10-08
+  url: https://speech.fit.vut.cz/software/but-speech-fit-reverb-database
+  license_id: LicenseRef-LDC-restricted
+  evidence_quote: valid LDC license
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset-subset
+  source_sha256: 487de93e70f8374242e372d1125888bcc8cd2ebb17de4689036b23f176de2091
+  source_http_status: 200
+  note: Do not load retransmitted LDC-restricted audio.
+- id: meshrir-v1-2
+  name: MeshRIR measured RIRs
+  version_or_hash: Zenodo 10852693 v1.2
+  url: https://zenodo.org/api/records/10852693
+  license_id: CC-BY-4.0
+  evidence_quote: '"license": {"id": "cc-by-4.0"}'
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: measured-rir
+  source_sha256: ef47e54d19cd44228eee5558169fc0e8fd5fb8cec5f5ae925515043c09583a31
+  source_http_status: 200
+  note: Source record API returned HTTP 200; read-only validation only.
+- id: dechorate-hdf5-v1
+  name: dEchorate measured RIR HDF5 v1.0
+  version_or_hash: Zenodo 5562386 v1.0 HDF5
+  url: https://doi.org/10.5281/zenodo.5562386
+  license_id: CC-BY-4.0
+  evidence_quote: 'CC BY 4.0'
+  evidence_scope: 'Local THIRD_PARTY.md:148,161-170 and the dechorate-clean review:31; historical attribution, not a fresh publisher retrieval.'
+  checked_on: '2026-10-10'
+  disposition: internal
+  kind: measured-rir
+  source_http_status: null
+  source_sha256: null
+  attribution: 'Diego Di Carlo, Pinchas Tandeitnik, Cedric Foy, Nancy Bertin, Antoine Deleforge and Sharon Gannot, The dEchorate dataset, v1.0, DOI 10.5281/zenodo.5562386.'
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  modifications: 'Internal adapter selects hyperslabs and interprets publisher geometry; downstream resampling/alignment must be recorded in run provenance.'
+  note: 'User-supplied, read-only internal validation only. No dataset or derived acoustic table ships. The date records a local-document review, not an online source check. Attach an authenticated publisher record before claiming independent source verification. Keep v2 and the excluded SOFA edition separate.'
+- id: dechorate-hdf5-v2
+  name: dEchorate measured RIR HDF5
+  version_or_hash: Zenodo 6576203 v2.0 HDF5
+  url: https://zenodo.org/api/records/6576203
+  license_id: CC-BY-4.0
+  evidence_quote: '"license": {"id": "cc-by-4.0"}'
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: measured-rir
+  source_sha256: 77189af9619858bbafc35c2349e73390d78f60e4e1fcea594c85c237896a676c
+  source_http_status: 200
+  note: API verified CC BY 4.0; dEchorate_rirs_gzip7.hdf5 (4192401641 bytes) and database CSV (2931172 bytes) are
+    available. No dataset downloaded. Port SOFA benches to HDF5 plus CSV and preserve recorded timing/coordinates;
+    do not treat it as the unavailable SOFA edition.
+- id: dechorate-sofa-2022
+  name: dEchorate SOFA edition referenced by old bench
+  version_or_hash: Zenodo 6580691; API HTTP 410 on 2026-10-08
+  url: https://zenodo.org/api/records/6580691
+  license_id: LicenseRef-unavailable
+  evidence_quote: 'HTTP Error 410: GONE'
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: measured-rir-edition
+  source_sha256: ba4c88ef6b4382cf80ae105b08501a248fe31e21d7ff23bb0795a28ecc4ba6e0
+  source_http_status: 410
+  note: Rights/source cannot be verified; use the separately licensed HDF5 record instead.
+- id: air-v1-4
+  name: Aachen Impulse Response Database
+  version_or_hash: AIR v1.4
+  url: https://www.iks.rwth-aachen.de/en/research-new/tools-downloads/databases/aachen-impulse-response-database/
+  license_id: MIT
+  evidence_quote: For license information see the included MIT license file.
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: measured-rir
+  source_sha256: d5cf4c08cb7c6885a424777e08d776c3e2696707d854d81039c3f4b7d79083f4
+  source_http_status: 200
+  note: Read-only validation only; no data copied.
+- id: arni-rir
+  name: Arni variable-acoustics room measured RIRs
+  version_or_hash: Zenodo 6985104
+  url: https://zenodo.org/api/records/6985104
+  license_id: CC-BY-4.0
+  evidence_quote: '"license": {"id": "cc-by-4.0"}'
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: measured-rir
+  source_sha256: 8d8bc99702b5581786c66a7970fab8c1c8c84b01b86ab46e98501a55927e2d64
+  source_http_status: 200
+  note: Read-only validation only. Local snapshot has metadata files only, no IR audio.
+- id: bras-v3
+  name: BRAS measured room acoustics/directivity
+  version_or_hash: BRAS v3 (2020-10-06)
+  url: https://api.datacite.org/dois/10.14279/depositonce-6726.3
+  license_id: CC-BY-SA-4.0
+  evidence_quote: Creative Commons Attribution Share Alike 4.0 International
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: measured-rir-and-directivity
+  source_sha256: ab451531790f578e20f1c228510e183c0c2ca208871a3aa2d5b375ad5b2f4e44
+  source_http_status: 200
+  note: 'STRICT: internal validation only. Loaders retain bras_derived and internal_validation_only lineage; RIRs,
+    fitted models and dry reports propagate it. Dataset generation, shared training manifest reader and project
+    export reject it. Arrays with deliberately stripped provenance cannot be identified.'
+- id: esc50
+  name: ESC-50 environmental audio
+  version_or_hash: ESC-50 repository commit 33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6
+  url: https://github.com/karolpiczak/ESC-50
+  license_id: CC-BY-NC-3.0
+  evidence_quote: Creative Commons Attribution Non-Commercial license
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: 91eaa98483fc4754fe24e6133003237858fe3c1c0876e025b655cca217f3dbea
+  source_http_status: 200
+  note: NC material excluded, including internal validation.
+- id: esc10
+  name: ESC-10 subset
+  version_or_hash: ESC-50 repository commit 33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6; ESC-10 subset
+  url: https://raw.githubusercontent.com/karolpiczak/ESC-50/33c8ce9eb2cf0b1c2f8bcf322eb349b6be34dbb6/README.md
+  license_id: CC-BY-4.0
+  evidence_quote: A smaller subset (clips tagged as *ESC-10*) is distributed under CC BY (Attribution).
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: 60a3ae8cecca8488f5381ef54f302396dbd1b0d82ae0d14afc92a4bfd6b34501
+  source_http_status: 200
+  note: Not needed; policy excludes the dataset.
+- id: demand
+  name: DEMAND environmental noise
+  version_or_hash: Zenodo 1227121 v1.0
+  url: https://zenodo.org/api/records/1227121
+  license_id: LicenseRef-contradictory-SA-vs-BY
+  evidence_quote: Creative Commons Attribution-ShareAlike 3.0 Unported License
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: c0e44c0cca0d7a4f585146b8392874a5cbe787ecd00a5f4d8707e7bbaf02a000
+  source_http_status: 200
+  note: Structured field says cc-by-4.0; record conflicts; stricter ShareAlike disposition applies.
+- id: chime-home
+  name: CHiME-Home domestic audio
+  version_or_hash: Archive.org item chime-home; source page SHA-256 cac6d0bba56edd7205af01b3ce5c5d8a691a3d1486ae877bd97a6f01fb9a37cc
+    on 2026-10-08
+  url: https://archive.org/details/chime-home
+  license_id: CC-BY-NC-SA-3.0
+  evidence_quote: Attribution-Noncommercial-Share Alike 3.0
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: ef05f568cb93496dd51e03eeac02676f7ed58541766eed019f58be9fac9f0a6d
+  source_http_status: 200
+  note: Noncommercial and ShareAlike.
+- id: sins
+  name: SINS domestic soundscapes
+  version_or_hash: DCASE datalist page SHA-256 f52c42607afa1d38746e2862a3a649ce17e3ebdf33176b6fc4b8e164de18f2e5
+    on 2026-10-08; underlying audio release not licensed
+  url: https://dcase-repo.github.io/dcase_datalist/datasets/sounds/sins.html
+  license_id: LicenseRef-Free-unclear
+  evidence_quote: Free
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: f52c42607afa1d38746e2862a3a649ce17e3ebdf33176b6fc4b8e164de18f2e5
+  source_http_status: 200
+  note: Official listing specifies only “Free”; rights unclear for commercial training.
+- id: desed-audio
+  name: DESED audio collections
+  version_or_hash: GitHub repository commit 0686178dd218b431ef1606e5a2139df7c543b07b (checked 2026-10-08)
+  url: https://github.com/turpaultn/DESED
+  license_id: LicenseRef-mixed-and-source-dependent
+  evidence_quote: The different datasets contain a license file at their root for the attribution of each file.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: 3fcbfca6d77e89cd07458e83e40b98c40ac38ff8d6ae8ec88050c0b33a32bc99
+  source_http_status: 200
+  note: Includes Freesound, YouTube, MUSAN and SINS sources; aggregate label does not clear every clip.
+- id: musan-audio
+  name: MUSAN corpus audio
+  version_or_hash: OpenSLR 17
+  url: https://www.openslr.org/17/
+  license_id: CC-BY-4.0-corpus-label
+  evidence_quote: 'License: Attribution 4.0 International (CC BY 4.0)'
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: 4cf0be3b3ffd0ac78499998adaec48909d16431a0717575beee80cf175520fbc
+  source_http_status: 200
+  note: Per-file provenance of the noise subset unverified; corpus not adopted.
+- id: tau-srir
+  name: TAU Spatial Room Impulse Response Database
+  version_or_hash: Zenodo 6408611
+  url: https://zenodo.org/api/records/6408611
+  license_id: LicenseRef-custom-non-commercial
+  evidence_quote: The database is published under a custom open non-commercial with attribution license.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: measured-rir
+  source_sha256: 35f8860b7711efecacffeb600f08a4f25bc9d240792ccd967e3d863c54852759
+  source_http_status: 200
+  note: Noncommercial; never.
+- id: tau-nigens-2021
+  name: TAU-NIGENS Spatial Sound Events 2021
+  version_or_hash: Zenodo 4568781
+  url: https://zenodo.org/api/records/4568781
+  license_id: CC-BY-NC-4.0
+  evidence_quote: '"license": {"id": "cc-by-nc-4.0"}'
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: cd465519669ffdcfb68425cdd052f0f34102e22847a26fef172489098a988dc5
+  source_http_status: 200
+  note: Noncommercial; never.
+- id: starss22
+  name: STARSS22 Sony-TAu spatial sound scenes
+  version_or_hash: Zenodo 6600531 v1.1.0
+  url: https://zenodo.org/api/records/6600531
+  license_id: MIT (data field ambiguous)
+  evidence_quote: '"license": {"id": "mit-license"}'
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: dataset
+  source_sha256: 59e7f36578948b0567901dd1aabff17b4b6e34aa5f960e17da0506bc03f9ec8d
+  source_http_status: 200
+  note: Field says MIT but no explicit data-licence statement was found; treat as unclear.
+- id: gpuRIR
+  name: gpuRIR package
+  version_or_hash: GitHub repository commit 06da27dd2621d0598bc63f5b279b96e96c501eb8 (checked 2026-10-08)
+  url: https://github.com/DavidDiazGuerra/gpuRIR
+  license_id: AGPL-3.0-only
+  evidence_quote: The library is subject to AGPL-3.0 license and comes with no warranty.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: python-package
+  source_sha256: b383a41bb87e419bab81831b8bc4a089bfda65758dec3477a0e92ba6bd0749a4
+  source_http_status: 200
+  note: Forbidden import; do not add as dependency.
+  import_name: gpuRIR
+- id: scaper
+  name: Scaper soundscape composer
+  version_or_hash: v1.6.5; LICENSE file commit c0ecf71f9dd08fed2150fa6a05596f39ddb8d91e
+  url: https://raw.githubusercontent.com/justinsalamon/scaper/c0ecf71f9dd08fed2150fa6a05596f39ddb8d91e/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: 'Redistribution and use in source and binary forms, with or without modification, are permitted
+    provided that the following conditions are met:'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: python-package
+  source_sha256: b7b62889546c43b4ed44e412cf5fb29d4f86bec376664776e5332dede5a7d06e
+  source_http_status: 200
+  note: Optional composer only; its source assets still need per-item licensing.
+- id: ffmpeg
+  name: FFmpeg host audio decoder
+  version_or_hash: Host build varies by deployment; not installed in export .venv; record exact version and configure
+    flags at deployment
+  url: https://ffmpeg.org/legal.html
+  license_id: LicenseRef-build-config-dependent
+  evidence_quote: FFmpeg is licensed under the GNU Lesser General Public License (LGPL) version 2.1 or later.
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: host-program
+  source_sha256: cd51dc25f9e3200b1e3953aee036f499ed51f01f7ba30563873186cb3f870eda
+  source_http_status: 200
+  note: Builds with optional GPL components require separate review; never bundle an unchecked build.
+- id: alsa-utils
+  name: alsa-utils (arecord/aplay)
+  version_or_hash: Upstream COPYING at commit f3537ede21d0bc5b34835988752523b08459c532; OS-installed binary version
+    varies by device; capture package version at deployment
+  url: https://raw.githubusercontent.com/alsa-project/alsa-utils/f3537ede21d0bc5b34835988752523b08459c532/COPYING
+  license_id: GPL-2.0-only
+  evidence_quote: GNU GENERAL PUBLIC LICENSE Version 2
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: host-program
+  source_sha256: 231f7edcc7352d7734a96eef0b8030f77982678c516876fcb81e25b32d68564c
+  source_http_status: 200
+  note: OS-installed tool only; never bundle without separate terms review.
+- id: hdf5-tools
+  name: HDF5 tools (h5dump)
+  version_or_hash: OS-installed version varies by validation host; not installed in export .venv; capture package
+    version at deployment
+  url: https://github.com/HDFGroup/hdf5/blob/develop/LICENSE
+  license_id: BSD-3-Clause WITH LicenseRef-HDF5-Enhancements
+  evidence_quote: This software library and utilities is covered by the 3-clause BSD License.
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: validation-tool
+  source_sha256: 5c10f64467b582d4d507fab9d87a5ca7c43293c560c2f2df82160ef858d9e220
+  source_http_status: 200
+  note: Internal validation only; not bundled; license includes an Enhancements clause.
+- id: h5py
+  name: h5py optional HDF5 validation reader
+  version_or_hash: Not installed in export .venv; upstream license file SHA-256 5fa820b8a6dab1fbec6e9e6265d2ebf306db1398d2f77a1acea1899ee89ac46b
+  url: https://github.com/h5py/h5py/blob/master/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: Copyright (c) 2008 Andrew Collette and contributors
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: validation-tool
+  source_sha256: 05c5adb2ba4ee3c19ec4d8ddf804a89cadbfed25f5ff826c22fd63f857ec7684
+  source_http_status: 200
+  note: Potential WP8 tool only; not imported by current export.
+- id: raspberry-pi-docs
+  name: Raspberry Pi online documentation
+  version_or_hash: Licensing page current 2026-10-08
+  url: https://www.raspberrypi.com/licensing/
+  license_id: CC-BY-SA-4.0
+  evidence_quote: All of our online documentation is released under a Creative Commons Attribution-ShareAlike 4.0
+    International (CC BY-SA) licence.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: documentation
+  source_sha256: 11988d565f7e25592ef71aa253f52f9961d566d8a0e4caa4b251cb6f72659bfe
+  source_http_status: 403
+  note: Cite and link only; do not copy/adapt.
+- id: raspberry-pi-i2s-whitepaper
+  name: Using the I2S peripherals on Raspberry Pi SBCs white paper
+  version_or_hash: RP-009699-WP-1 Release 1; build 2026-02-20; e3526fb0ec27
+  url: https://pip-assets.raspberrypi.com/categories/1259-audio-camera-and-display/documents/RP-009699-WP-1-Using%20the%20I2S%20peripherals%20on%20Raspberry%20Pi%20SBCs.pdf
+  license_id: CC-BY-ND-4.0
+  evidence_quote: This documentation is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International
+    (CC BY-ND).
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: documentation
+  source_sha256: 1bc0d846a98037b019f77a357c7edf986341d5f7f00fa85d3e110bde9f22163a
+  source_http_status: 200
+  note: 'Citation/factual reference only. Source PDF colophon is CC BY-ND 4.0 and its separate resources disclaimer
+    limits use to Raspberry Pi products. Audited current tree: no copied prose, device-tree overlay, wiring table,
+    or figures. No adaptation redistributed.'
+- id: ima-adpcm-table
+  name: Historical IMA ADPCM constants (removed)
+  version_or_hash: IMA Recommended Practices Revision 3.00, 21 October 1992; rights not stated
+  url: https://www.cs.columbia.edu/~hgs/audio/dvi/
+  license_id: LicenseRef-unverified
+  evidence_quote: The IMA ceased operations around 1998 and attempts to locate the source document for the specification
+    have not been successful.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: numeric-standard-table
+  source_sha256: 714ec4d6294e225718b52ddefbdab1fbfeba5863b125b73cd658776f4b550b52
+  source_http_status: 200
+  note: Removed from iot_mic.py in WP9 addendum. The project stress quantizer now uses formula-generated steps and
+    a formula giving IMA's index increments; it is not IMA bit-exact. Keep this historical source excluded; no permission inferred.
+- id: iso-266-preferred-frequencies
+  name: ISO 266 historical source framing (removed)
+  version_or_hash: ISO 266:1997, Edition 2; current edition confirmed by ISO in 2023
+  url: https://www.iso.org/standard/1350.html
+  license_id: LicenseRef-ISO-rights-reserved
+  evidence_quote: Any use, including reproduction requires our written permission.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: numeric-standard-table
+  role: Historical provenance only; current labels are generated from Renard R10 and powers of ten.
+  note: Do not copy the ISO table. Current code cites NBS TN 990 for the historical series and computes labels.
+    Exact centres follow the base-10 formula. ISO is only a cross-reference to a standard using the same values.
+    Initial HTTP 403; final direct recheck returned 200 with the recorded quote.
+  source_http_status: 200
+  source_sha256: 6b7c1b3e4be493a615eed17b5fbeb6e3dd083b8a8591342a30b2de194aa31ff2
+- id: netcdf4-netcdf-c
+  name: netCDF-C bundled by netCDF4
+  version_or_hash: netCDF-C 4.9.3; binary SHA-256 a9dede97f630d7129478d99f6ae1d40ec39c46df74deb079d3ed4a4462f06bbe
+  url: https://raw.githubusercontent.com/Unidata/netcdf-c/v4.9.3/COPYRIGHT
+  license_id: BSD-3-Clause
+  evidence_quote: 'Redistribution and use in source and binary forms, with or without modification, are permitted
+    provided that the following conditions are met:'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra
+  source_license_sha256: 58b3a925e82191209929dbf47891f9d661e09d8f8ee753ca90bd3f6a1262ecb7
+  installed_in: netCDF4==1.7.4 wheel; libnetcdf-51d2eb2d.so.22
+  source_http_status: 200
+  source_sha256: 58b3a925e82191209929dbf47891f9d661e09d8f8ee753ca90bd3f6a1262ecb7
+- id: netcdf4-hdf5
+  name: HDF5 and its bundled filter plugins from netCDF4
+  version_or_hash: HDF5 1.14.6; libhdf5 SHA-256 a7ec2a5def9ca977ce63d859805098c1465dc4dc756183b8e10fc0ac0f41c5dd;
+    libhdf5_hl SHA-256 b5cd80cb606d9771be66eb6d8d80a393cddb21106959b9a320cde11ac9528bdf
+  url: https://raw.githubusercontent.com/HDFGroup/hdf5/hdf5_1_14_6/COPYING
+  license_id: BSD-3-Clause WITH LicenseRef-HDF5-Enhancements
+  evidence_quote: permitted for any purpose (including commercial purposes)
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra
+  source_license_sha256: 587b532c4c27b64ecff3192d6189e149231934a00c753a401d4559231af7f7a7
+  installed_in: netCDF4==1.7.4 wheel; libhdf5, libhdf5_hl and 9 filter plugins; plugin binary hashes are in evidence/netcdf_native_audit.txt
+  source_http_status: 200
+  source_sha256: 587b532c4c27b64ecff3192d6189e149231934a00c753a401d4559231af7f7a7
+- id: netcdf4-libaec
+  name: libaec and libsz compatibility library bundled by netCDF4
+  version_or_hash: libaec binary SHA-256 894394b9fe4cbf55faca95c800252210afbf0b34d63fbb44bc022c8d49fde0df; libsz
+    binary SHA-256 bbb13d4f76bf45edc20d25e807eb2281bc51118bc1a2b00ca3a36dc6669a5d59
+  url: https://raw.githubusercontent.com/Deutsches-Klimarechenzentrum/libaec/main/LICENSE.txt
+  license_id: BSD-2-Clause
+  evidence_quote: 'Redistribution and use in source and binary forms, with or without modification, are permitted
+    provided that the following conditions are met:'
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra; libsz is the libaec SZIP-compatible interface
+  source_license_sha256: 9fdabba96fbc46af0ca018f86329f1e06e873b25801732001128d5afca265e36
+  installed_in: netCDF4==1.7.4 wheel; libaec 1.1.3 and libsz
+  source_http_status: 200
+  source_sha256: 9fdabba96fbc46af0ca018f86329f1e06e873b25801732001128d5afca265e36
+- id: netcdf4-blosc
+  name: Blosc bundled by netCDF4
+  version_or_hash: Blosc 1.21.6; binary SHA-256 c7631c1451a9024c60bfe40118d790a9280ca0d2569e998b15119fdd23841913
+  url: https://raw.githubusercontent.com/Blosc/c-blosc/v1.21.6/LICENSE.txt
+  license_id: BSD-3-Clause
+  evidence_quote: BSD License For Blosc - A blocking, shuffling and lossless compression library
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra
+  source_license_sha256: 22623131a9b9f6a86a4dc6b9bccbb1d2aeb390df86bca00fc727af24735c2fae
+  installed_in: netCDF4==1.7.4 wheel; libblosc-e62ffe23.so.1.21.6
+  source_http_status: 200
+  source_sha256: 22623131a9b9f6a86a4dc6b9bccbb1d2aeb390df86bca00fc727af24735c2fae
+- id: netcdf4-bzip2
+  name: bzip2 bundled by netCDF4
+  version_or_hash: bzip2 1.0.6; binary SHA-256 e61bd9f076f2689ad004ec87014be155e1f49169b6edeb682a1892173888c619
+  url: https://gitlab.com/api/v4/projects/bzip2%2Fbzip2/repository/files/LICENSE/raw?ref=bzip2-1.0.6
+  license_id: LicenseRef-bzip2-1.0.6
+  evidence_quote: This program, "bzip2", the associated library "libbzip2", and all documentation, are copyright
+    (C) 1996-2010 Julian R Seward.
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra
+  source_license_sha256: 4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204
+  installed_in: netCDF4==1.7.4 wheel; libbz2-a1e77c99.so.1.0.6
+  source_http_status: 200
+  source_sha256: 4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204
+- id: netcdf4-openssl
+  name: OpenSSL bundled by netCDF4
+  version_or_hash: OpenSSL 3.5.1; libssl SHA-256 4ec6e9759e7b7168275d4a8528e392cb9388e855b557f733b046ca42896c4ec6;
+    libcrypto SHA-256 cb276acba9472c6457a38f2396a9f85ca4f92b9141ca5f2a1df56074416b2512
+  url: https://raw.githubusercontent.com/openssl/openssl/openssl-3.5.1/LICENSE.txt
+  license_id: Apache-2.0
+  evidence_quote: Apache License Version 2.0, January 2004
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra; OpenSSL cryptographic libraries
+  source_license_sha256: 7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a
+  installed_in: netCDF4==1.7.4 wheel; libssl-6faad603.so.3 and libcrypto-0f7a7a89.so.3
+  source_http_status: 200
+  source_sha256: 7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a
+- id: netcdf4-curl
+  name: curl bundled by netCDF4
+  version_or_hash: libcurl 8.14.1; binary SHA-256 09fea151e097a6b0c94b08d0f3af6330c90b0c62f0f083225aa6460732fba5ec
+  url: https://raw.githubusercontent.com/curl/curl/curl-8_14_1/COPYING
+  license_id: LicenseRef-curl
+  evidence_quote: Permission to use, copy, modify, and distribute this software for any purpose with or without
+    fee is hereby granted
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra
+  source_license_sha256: e18f1989333b70044b2adfb7dc2f905d0119dbdcac3bc9f4bc9d540e3a29de5b
+  installed_in: netCDF4==1.7.4 wheel; libcurl-69c0d65e.so.4.8.0
+  source_http_status: 200
+  source_sha256: e18f1989333b70044b2adfb7dc2f905d0119dbdcac3bc9f4bc9d540e3a29de5b
+- id: netcdf4-zstd
+  name: Zstandard bundled by netCDF4
+  version_or_hash: Zstandard 1.5.7; binary SHA-256 c4c80fb4e13ac20ef9d5884d80070170447e1674c7f548ba03802f82e18137d5
+  url: https://raw.githubusercontent.com/facebook/zstd/v1.5.7/LICENSE
+  license_id: BSD-3-Clause
+  evidence_quote: BSD License For Zstandard software
+  checked_on: '2026-10-08'
+  disposition: plug-in
+  kind: bundled-native-library
+  role: netCDF4 optional [sofa] extra
+  source_license_sha256: 7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8
+  installed_in: netCDF4==1.7.4 wheel; libzstd-cfaaf94d.so.1.5.7
+  source_http_status: 200
+  source_sha256: 7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8
+- id: inmp441-datasheet
+  name: TDK InvenSense INMP441 datasheet
+  version_or_hash: DS-INMP441-00 Rev 1.1
+  url: https://invensense.tdk.com/wp-content/uploads/2015/02/INMP441.pdf
+  license_id: LicenseRef-no-reuse-grant
+  evidence_quote: All rights reserved.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: technical-document
+  role: datasheet cited for MEMS device assumptions; cite and link only
+  note: Vendor URL currently redirects to a download-resource HTML page. Datasheet facts only, with citation; no
+    table or figure copied. Old PDF revision must not be presented as a freshly downloaded PDF.
+  source_http_status: 200
+  source_sha256: e8bf736dcd08cde94b3a65bd68c5cf1ab2a528a3b731e15fa807b5a69a1791ed
+- id: ics-43434-datasheet
+  name: TDK InvenSense ICS-43434 datasheet
+  version_or_hash: DS-000069 v1.2
+  url: https://www.invensense.tdk.com/en-us/products/microphone/ics-43434
+  license_id: LicenseRef-no-reuse-grant
+  evidence_quote: DS-000069 – ICS-43434 Datasheet Version 1.2
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: technical-document
+  role: datasheet cited for MEMS device assumptions; cite and link only
+  note: The official product page links the datasheet; no separate reuse licence was stated.
+  source_http_status: 200
+  source_sha256: 49819efe5ec5fb2262af296ec8917f3ec3f8425cc1db543c345a6798d9871c72
+- id: sph0645-datasheet
+  name: Knowles SPH0645LM4H-B product brief
+  version_or_hash: KAS-700-0137 Rev 29-May-2019
+  url: https://www.knowles.com/docs/default-source/model-downloads/kas-700-0137-crawford-mic-on-flex-product-brief-rev29may19.pdf?sfvrsn=8
+  license_id: LicenseRef-all-rights-reserved
+  evidence_quote: © 2019, Knowles Electronics, LLC, Itasca, IL USA. All Rights Reserved.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: technical-document
+  role: datasheet cited for MEMS device assumptions; cite and link only
+  source_http_status: 200
+  source_sha256: d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d
+  note: Official one-page product brief checked through web PDF retrieval after direct HTTP returned HTML. No brief
+    text or figures copied. The separate SPH0645LM4H-B Rev C datasheet is the source for device facts, not this
+    carrier-board brief.
+- id: st-an4427
+  name: ST AN4427 gasket design application note
+  version_or_hash: AN4427 Rev 2; DocID025705
+  url: https://www.st.com/resource/en/application_note/dm00103201-gasket-design-for-optimal-acoustic-performance-in-mems-microphones-stmicroelectronics.pdf
+  license_id: LicenseRef-no-reuse-grant
+  evidence_quote: No license, express or implied, to any intellectual property right is granted by ST herein.
+  checked_on: '2026-10-08'
+  disposition: never
+  kind: technical-document
+  role: source citation only; no table or figure copied
+  source_http_status: null
+  source_sha256: 'unavailable: The read operation timed out'
+- id: renard-r10-history
+  name: Renard preferred-number history and R10 mathematical series
+  version_or_hash: NBS Technical Note 990, Hans J. Milton, December 1978; §2.5.5 p. 29; §2.5.6 Table 7 p. 31; §2.5.12 p. 37
+  url: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote990.pdf
+  license_id: LicenseRef-public-domain-US
+  evidence_quote: The Renard Series of Preferred Numbers
+  checked_on: '2026-10-08'
+  disposition: internal
+  kind: historical-mathematical-reference
+  source_sha256: 4c18b9d90b2006d1f69bc44158f768ebc7d6829f317c5d5d1b0a730a4a784bbd
+  source_http_status: 200
+  note: 'Historical source for the Renard 1877-1879 method, not a copied ISO table. NIST public-information policy:
+    https://www.nist.gov/copyrights-disclaimers . No document or table is shipped. Code generates R10 labels using
+    decade rounding; exact centres use a base-10 formula.'

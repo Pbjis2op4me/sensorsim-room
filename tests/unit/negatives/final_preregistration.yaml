@@ -1,0 +1,41 @@
+schema: wp3-final-addendum/1
+evidence_label: proxy
+base: 4435e68
+historical_record: Preserve original WP3 FAIL and review-fix PASS; the earlier L4 test was degenerate, comparing the same estimator to itself with independent dither.
+data: All controls are project-generated; no user recordings or measured RIRs. Reviewer stand-in room and TRUTH source formula. No fitting or tuning on acceptance outputs.
+split: 144 paired independent source/room groups per seed for L4 and path tests; grouped classifier CV and 1000 cluster bootstraps using the unchanged reviewer helper. Target partial estimation uses only declared training targets.
+seeds: [1701, 1702, 1703]
+acceptance_runs: 1
+l4:
+  reference: Known analog bed through varied Pi profile with self-noise, captured once as Q(a+e); candidate uses Q(a)+e with profile overload clipping.
+  levels_spl: [60, 80]
+  bed_spl: 35
+  decision: All three seeds must have paired AUC point AND entire 95% CI inside [0.45, 0.55], and absolute mean-error and RMS-error differences from single capture <= 0.005 LSB. Otherwise fail (CI overlapping equivalence boundary is inconclusive).
+  rationale: Chance equivalence is bounded by +/-0.05 AUC; do not equate failure to reject the exact 0.5 null with equivalence. Also report the OLD exact-null rule (point in band and CI contains 0.5) separately for every seed without hiding any failure.
+path_c2st:
+  reference: Unchanged reviewer independent-RNG path probe, same dry source/RIR/background, independent level/device/capture draws.
+  domains: [device_recorded, spl_referenced]
+  decision: All six runs use programme E2; pass if AUC <= 0.60 and upper95 <= 0.70; fail if lower95 >= 0.60; otherwise inconclusive.
+  controls: Reviewer +5 dB negative-path shift, seed 1701, both modes; report sensitivity without changing programme thresholds.
+realism_gate:
+  decision: Explicit training_eligible false, missing receipt, and each of seven ungated impact families must be refused before training. A bound fixture receipt is accepted; content/receipt mutations are rejected.
+tonal_exclusion:
+  training_targets: Six doorbell TRUTH stand-ins, performance indices 0..5, exclusively used for spectral partial estimation.
+  seeds: [1701, 1702, 1703]
+  draws: 200 per seed per tonal family
+  band_fraction: 0.03
+  decision: Zero admitted partial/sweep-support intersections with any target band. Unsatisfiable families must fail closed, and rejection counts are reported. Review gate remains required.
+floor_warning:
+  seeds: [1701, 1702, 1703]
+  recordings_per_seed: 100
+  duration_s: 2
+  condition: Legitimate varied Pi captures of floor alone, or lowpassed 20..35 dB SPL beds; independent variation at validation.
+  decision: False-alarm fraction <= 0.05 overall and each seed; sustained suppressed-floor positive controls must warn, short dips must not.
+  proposed_margin_db: 6
+  proposed_duration_s: 1
+  diagnostic_frame_s: 0.25
+suites:
+  default: pytest -q -p no:cacheprovider
+  slow: pytest -q -p no:cacheprovider -m slow
+  decision: No unexpected failures; expected failures, skips and deselections are missing evidence and reported separately.
+overall: Pass only if all primary gates pass and suites have no unexpected failures; otherwise fail or inconclusive. No deployment realism, recall or FA/hour qualification.

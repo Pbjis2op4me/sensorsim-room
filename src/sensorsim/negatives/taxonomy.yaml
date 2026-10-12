@@ -1,0 +1,766 @@
+version: negative-taxonomy/2
+license_id: Apache-2.0
+evidence_label: proxy
+citations:
+  WP3: Acoustic-family choices are engineering inference; no measured household levels or prevalence estimates are distributed.
+  S02: Commercially clean household confuser audio (S02, 2026-10-08); metadata shortlist,
+    no audio audition or prevalence/level measurements.
+  S05: Source models for knock, doorbell and kettle (S05, 2026-10-08); no transferable
+    numerical population ranges established.
+  S06: Simulator fingerprints and label shortcuts (S06, 2026-10-08); shared source/room/device
+    path and captured-audio separation.
+  Q19:
+    source: Neitzel et al., Applied Acoustics 102 (2015), Table 4; 9 homes, 7 days;
+      bibliographic reference only; no measurements from it are distributed.
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4820284/
+  Q22:
+    source: TDK INMP441 datasheet DS-INMP441-00 r1.1;
+      A-weighted totals do not specify unweighted noise PSD.
+    url: https://microcontroller-course.web.cern.ch/Project_Material/resources/INMP441.pdf
+  Q13:
+    source: Arik et al., Interspeech 2017; hard-negative mining motivation, not a
+      household prevalence source.
+    url: https://www.isca-archive.org/interspeech_2017/ark17_interspeech.pdf
+parameter_bounds_basis: All numerical regions are explicit unsourced proxy assumptions;
+  fit authorized takes before claiming population realism.
+families:
+- family: door_closure
+  confusable_target: knock
+  acoustic_signature: Broad impulsive thud with decaying panel modes; latch may add
+    a click.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: broadband_contact_body
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: cabinet_door
+  confusable_target: knock
+  acoustic_signature: Short impact and panel ring, sometimes multiple closure impulses.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: broadband_contact_body
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: footsteps_wood
+  confusable_target: knock
+  acoustic_signature: Repeated low-frequency impacts with short floor resonances.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: broadband_contact_body
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: hammering
+  confusable_target: knock
+  acoustic_signature: Repeated sharp impacts with decaying resonances.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: broadband_contact_body
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: dropped_objects
+  confusable_target: knock
+  acoustic_signature: One or more impacts with bounce-dependent spacing and decay.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: broadband_contact_body
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: dishes_cutlery
+  confusable_target: knock
+  acoustic_signature: Irregular metallic or ceramic impacts with ringing partials.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: broadband_contact_body
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: furniture_taps
+  confusable_target: knock
+  acoustic_signature: Short modal impacts close to knock; deployment label review
+    required.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: broadband_contact_body
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: phone_notification
+  confusable_target: doorbell
+  acoustic_signature: Short pitched tone/chime pattern; narrowband partials.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: phone_notification
+  label_boundary: explicit reviewed target/negative boundary required
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: appliance_beeps
+  confusable_target: doorbell
+  acoustic_signature: Repeated gated narrowband tones.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: appliance_beeps
+  label_boundary: explicit reviewed target/negative boundary required
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: timer
+  confusable_target: doorbell
+  acoustic_signature: Periodic beeps with inter-beep silence.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: timer
+  label_boundary: explicit reviewed target/negative boundary required
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: tv_jingle
+  confusable_target: doorbell
+  acoustic_signature: Pitched multi-note sequence; simple procedural tones are a stress
+    proxy, not TV audio.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: tv_jingle
+  label_boundary: explicit reviewed target/negative boundary required
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: other_doorbell
+  confusable_target: doorbell
+  acoustic_signature: Chime sequence possibly indistinguishable from target; conditional
+    negative only.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: other_doorbell
+  label_boundary: explicit reviewed target/negative boundary required
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: alarm_chirp
+  confusable_target: doorbell
+  acoustic_signature: Short gated or swept-frequency tone.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: alarm_chirp
+  label_boundary: explicit reviewed target/negative boundary required
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: running_tap
+  confusable_target: kettle
+  acoustic_signature: Broadband turbulent noise with amplitude fluctuations.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: running_tap
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: boiling_pan
+  confusable_target: kettle
+  acoustic_signature: Broadband bubbling with low-frequency vessel components; noise-only
+    approximation.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: boiling_pan
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: frying
+  confusable_target: kettle
+  acoustic_signature: Broadband crackle with intermittent transients; AM noise is
+    an approximation.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: frying
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: washer_fill
+  confusable_target: kettle
+  acoustic_signature: Water-like broadband noise with changing envelope.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: washer_fill
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: coffee_machine
+  confusable_target: kettle
+  acoustic_signature: Pulsed pump plus band-limited water noise; proxy assumptions.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: coffee_machine
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: extractor_hood
+  confusable_target: kettle
+  acoustic_signature: Fan broadband with rotating/tonal components.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: rotor_noise
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: hair_dryer
+  confusable_target: kettle
+  acoustic_signature: Broadband motor/fan noise.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: rotor_noise
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: vacuum
+  confusable_target: kettle
+  acoustic_signature: Broadband suction plus motor tones.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: rotor_noise
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: device_floor
+  confusable_target: all
+  acoustic_signature: Electronic/capsule self-noise; white control is not a measured
+    PSD.
+  typical_level:
+    value: -87
+    unit: dBFS(A)
+    status: INMP441 nominal datasheet total; WP5 owns implementation and uncertainty
+    citation:
+    - Q22
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: device_floor
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: room_tone
+  confusable_target: all
+  acoustic_signature: Low-level broad indoor ambience, here low-passed noise.
+  typical_level:
+    value: null
+    unit: dBA L90
+    status: unknown; no cleared measured household level is distributed
+    citation: []
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: room_tone
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: hvac_fan
+  confusable_target: all
+  acoustic_signature: Broadband fan airflow and rotating component.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: rotor_noise
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+- family: fridge_hum
+  confusable_target: all
+  acoustic_signature: Mains-related harmonic hum plus compressor-like broadband component.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: fridge_hum
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+  energy_split_basis: 1/k for four harmonics plus 0.15 low-passed noise is an unsourced
+    fixed-speed proxy assumption; no inverter coverage.
+- family: distant_traffic
+  confusable_target: all
+  acoustic_signature: Low-passed broadband with slow amplitude changes.
+  typical_level:
+    value: null
+    unit: dB SPL at receiver
+    status: unknown; no verified family-specific level range in supplied research
+    citation:
+    - S02
+    - S05
+  proxy_level_status: shared microphone active-sample SPL assumption; not a measured
+    family prior
+  prevalence:
+    events_per_hour: null
+    status: unknown; caller must supply assumptions; library item counts are not prevalence
+  generator: distant_traffic
+  label_boundary: review against deployment target definitions
+  citation:
+  - WP3
+  - S02
+  - S05
+  proxy_event_spl_db:
+  - 60
+  - 80
+proxy_regions:
+  impact:
+    door_closure:
+      hits: 1
+      body_s:
+      - 0.1
+      - 0.15
+      modal_hz:
+      - 90.0
+      - 180.0
+      contact_s:
+      - 0.001
+      - 0.003
+    cabinet_door:
+      hits: 3
+      body_s:
+      - 0.025
+      - 0.04
+      modal_hz:
+      - 220.0
+      - 400.0
+      contact_s:
+      - 0.0005
+      - 0.001
+    footsteps_wood:
+      hits: 4
+      body_s:
+      - 0.06
+      - 0.075
+      modal_hz:
+      - 55.0
+      - 85.0
+      contact_s:
+      - 0.004
+      - 0.008
+    hammering:
+      hits: 5
+      body_s:
+      - 0.012
+      - 0.02
+      modal_hz:
+      - 450.0
+      - 850.0
+      contact_s:
+      - 0.0001
+      - 0.0004
+    dropped_objects:
+      hits: 3
+      body_s:
+      - 0.04
+      - 0.055
+      modal_hz:
+      - 950.0
+      - 1400.0
+      contact_s:
+      - 0.001
+      - 0.002
+    dishes_cutlery:
+      hits: 7
+      body_s:
+      - 0.003
+      - 0.008
+      modal_hz:
+      - 2200.0
+      - 3100.0
+      contact_s:
+      - 0.0001
+      - 0.0003
+    furniture_taps:
+      hits: 1
+      body_s:
+      - 0.008
+      - 0.012
+      modal_hz:
+      - 1500.0
+      - 2000.0
+      contact_s:
+      - 0.0003
+      - 0.0007
+  motor:
+    hvac_fan:
+      motor_hz:
+      - 40.0
+      - 65.0
+      lowpass_hz: 900.0
+      harmonics: 1
+      tone_weight: 0.05
+    extractor_hood:
+      motor_hz:
+      - 70.0
+      - 90.0
+      lowpass_hz: 1700.0
+      harmonics: 2
+      tone_weight: 0.12
+    hair_dryer:
+      motor_hz:
+      - 250.0
+      - 350.0
+      lowpass_hz: 5000.0
+      harmonics: 3
+      tone_weight: 0.08
+    vacuum:
+      motor_hz:
+      - 600.0
+      - 800.0
+      lowpass_hz: 3000.0
+      harmonics: 5
+      tone_weight: 0.3
+training_gate: Per-family procedural versus recorded C2ST and reviewed target boundary;
+  pending real inputs.

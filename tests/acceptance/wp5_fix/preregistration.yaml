@@ -1,0 +1,90 @@
+programme: sensorsim-room-in-distribution
+work_package: WP5
+version: 2
+registered_at: 2026-10-08
+status: frozen-before-acceptance
+scope:
+- versioned absolute-level Pi MEMS profiles
+- Pi in-distribution chain selection and SPL level reference
+- capture format and feature-path checks that can run without hardware
+- real-take floor and recall checks are pending until user data arrives
+- D1-D8 corrections after independent review of 8fa2a9f
+data:
+  split: Independent generated device-only fixtures; no fitting, room acoustics or
+    user recordings. TRUTH/MEAS not needed for device arithmetic.
+  provenance: proxy result (model-based)
+  fixture_seed: 20261009
+  sample_rate_hz: 16000
+  real_data_available: false
+  fixture_seeds:
+  - 20261009
+  - 20261010
+  - 20261011
+tests:
+- id: WP5-A-01
+  name: INMP441 sensitivity
+  fixture: 1 kHz sine, 2 seconds, peak amplitude 1.0 represents 94 dB SPL peak-sine
+    reference
+  profile: pi5_inmp441/1 nominal, no sampled variation
+  threshold: fitted output sine peak is -26.0 dBFS within 0.1 dB
+  decision: pass iff absolute error <= 0.1 dB
+- id: WP5-A-02
+  name: absolute self-noise
+  fixture: digital silence, 3 seconds for each registered seed
+  profile: pi5_inmp441/1 nominal, no sampled variation
+  threshold: 'output IEC A-weighted RMS is -87.0 dBFS within 0.5 dB, sine-referenced:
+    20*log10(sqrt(2)*rms_A)'
+  decision: pass iff absolute error <= 0.5 dB
+- id: WP5-A-03
+  name: Pi processing reachability
+  fixture: inspect and exercise every Pi profile
+  threshold: codec, AGC, noise suppression, and packet loss are absent and are not
+    called
+  decision: pass iff profile fields disable all four and guarded calls observe none
+- id: WP5-D-01
+  name: S16 conversion and edge feature parity
+  fixture: deterministic 1 kHz S32 tone, signed extreme samples, and a generated S16
+    device-format WAV
+  threshold: S32-to-S16 tone amplitude agrees within 0.01 dB; extreme samples map
+    exactly; max absolute feature difference between training samples and WAV decode
+    is <= 1e-5
+  decision: pass iff all conversion and feature comparisons meet their thresholds
+- id: WP5-B-C
+  name: measured floor and real held-out recall
+  fixture: user target takes and pre/post-take quiet from the deployed Pi and MEMS
+  threshold: Real floor +/-3 dB; >=36/40 bands within real-real 95% envelope; C2ST
+    upper <=0.70 and point <=0.60; recall loss <=1 take/class; audit ratio upper <=1.25
+  decision: pending until real data is available; do not infer a pass from proxies
+capture:
+  tone_level_check: when an acoustic calibration tone is supplied, compare measured
+    1 kHz peak dBFS to profile sensitivity plus the declared tone SPL; report as measured
+  quiet_floor_check: measure pre-take and post-take quiet separately and together;
+    report as measured and do not label less than 30 minutes as FA/hour
+  hardware_capture: I2S clocking and physical 24/32-bit-to-S16 conversion remain unverified
+    without hardware
+acceptance_decision:
+  implementation: pass only if WP5-A-01 through WP5-A-03 and WP5-D-01 pass
+  measured_data: pending; acceptance of real floor/recall remains open
+  any_threshold_failure: fail
+  unavailable_required_input: inconclusive or pending, never pass
+  seeds: Report all seeds and spread; median decides for numeric tests, all guarded
+    calls and extremes must pass. No model comparison in this run.
+prior_result: 'FAIL: original WP5-A-02 +3.13 dB error against 0.5 dB, using original
+  meter with sine reference; IEC error +4.02 dB'
+corrections:
+  threshold_changes: None for A01,A02,A03,D01. Correct sine reference and IEC meter.
+    Real calibration tolerance now +/-3 dB for INMP441 (datasheet); not the synthetic
+    A01 +/-0.1 dB threshold.
+  capture_d: Proxy only; generated S32/S16 tone, extremes, WAV decode and independent
+    training read. Physical Pi conversion explicitly NOT checked by self-test or a
+    single real WAV.
+  event_prior: Assumed 60-80 dB SPL RMS over event span at microphone, exposed setting;
+    no claim of measured class priors. Device background preserved digitally; spl_referenced
+    bed option.
+diagnostics:
+  review_reproductions: Original seeds and 600 windows/case; historical diagnostics
+    only, not new acceptance
+  new_regressions: Fail first on 8fa2a9f; separate from the single fresh-seed acceptance
+    run
+  acceptance_once: scripts/run_acceptance.py records numbers once after implementation
+    and regressions

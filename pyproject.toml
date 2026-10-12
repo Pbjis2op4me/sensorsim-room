@@ -1,0 +1,83 @@
+[project]
+name = "sensorsim-room"
+version = "0.0.1"
+description = "Room-acoustic training-data expansion and a small CNN for indoor knock, doorbell and kettle recognition on a Raspberry Pi"
+authors = [{name = "Pbjis2op4me"}]
+readme = "README.md"
+requires-python = ">=3.12,<3.14"   # Full test suite verified on 3.12 and 3.13.
+license = "Apache-2.0"
+# THIRD_PARTY.md is the dependency/notice record that NOTICE points to; ship it with both artifacts.
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY.md"]
+classifiers = [
+    # No "License ::" classifier: PEP 639 supersedes it with the expression above.
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+    "Development Status :: 3 - Alpha",
+]
+
+# Derived from the actual import closure of the shipped modules, not copied
+# from the parent project, and confirmed by running the full pipeline in a
+# clean environment holding only these six.
+dependencies = [
+    "numpy>=2",
+    "scipy",
+    "pydantic>=2",
+    "PyYAML",
+    # room.dataset needs this at call time, not import time:
+    #   dataset.py:258  from pyroomacoustics.experimental import measure_rt60
+    #   dataset.py:342  importlib.metadata.version("pyroomacoustics")  (unguarded)
+    # Verified by installing without it: imports pass, both call sites fail.
+    "pyroomacoustics",
+    # project evaluation caps native BLAS/OpenMP pools at recognizer.threads (project._thread_cap)
+    "threadpoolctl>=3.1",
+]
+
+
+[project.urls]
+Repository = "https://github.com/Pbjis2op4me/sensorsim-room"
+
+[project.optional-dependencies]
+# Required ONLY by room.directivity.load_sofa (directivity.py:303, lazy import),
+# for reading measured source/receiver directivity from SOFA files.
+sofa = ["netCDF4"]
+
+# Training the baseline recognizer (sensorsim.recognizer train). Inference does not
+# need it: the trained model is plain JSON evaluated with numpy.
+recognizer = ["scikit-learn"]
+
+# Training the CNN recognizer (sensorsim.nn; the project's default `recognizer: {type: cnn}`).
+# Install PyTorch's CPU build FIRST so pip does not pull NVIDIA's CUDA libraries:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   pip install "sensorsim-room[nn]"
+# The device needs none of this: the exported edge.py runs on numpy alone.
+nn = ["torch"]   # tested with torch 2.14 (CPU build)
+
+# Test suite (tests/). threadpoolctl is a required runtime dependency (above); the tests use
+# it to keep BLAS pools at the thread count the numerical goldens were frozen with. netCDF4
+# and scikit-learn cover the SOFA and recognizer tests. The CNN tests skip unless PyTorch is
+# installed (the CPU build, as above): torch is left out here so a plain install never pulls CUDA.
+test = ["pytest", "netCDF4", "scikit-learn"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]   # lets tests import shared helpers as `tests.*`
+addopts = "-m \"not slow\""
+markers = [
+    "slow: expensive test or shared setup (~5 s); regressions: pytest -m 'slow and not acceptance'",
+    "acceptance: frozen registered campaign; requires verifier authorization and independent custody",
+]
+
+[build-system]
+requires = ["setuptools>=77"]   # PEP 639 license expression / license-files support
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# The licence register and audio-pack manifest schema are runtime inputs of sensorsim.licensing
+# (project export fails closed without them), loaded with importlib.resources. Human-facing notes
+# stay in licences/README.md at the repository root.
+[tool.setuptools.package-data]
+"sensorsim.licences" = ["register.yaml", "audio_pack_manifest.schema.json"]
+"sensorsim.negatives" = ["taxonomy.yaml"]

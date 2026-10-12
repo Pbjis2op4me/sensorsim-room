@@ -1,0 +1,85 @@
+schema: sensorsim-wp1-final-preregistration/1
+registration_date: 2026-10-08
+result_label: proxy result
+measured_results: none
+base: 69bcbdb
+purpose: Prospective F2 specificity and sensitivity control after the final E2 safeguards
+prior_record: Preserve the failed 18867e5b7ef8ad6c0b6d636fd42236ace747a0848b4b9d2b8d98e8c8d30c2219 registration unchanged
+execution:
+  runs: 1
+  missing_or_incomplete_evidence: inconclusive
+  threshold_changes_after_results: forbidden
+  training_or_tuning_on_acceptance: forbidden
+  optional_30_group_arm: not run
+split:
+  unit: independent procedural source group
+  replicates: 20
+  groups_per_side: 15
+  reference: independent 6 s takes
+  synthetic: independent 2 s takes
+  paired_length: 2 s takes sharing reference source seed, independent per-take capture noise and latency
+  training: none; frozen seeded untrained CNN fixture only
+  reuse: EQ controls transform synthetic windows; paired takes used only for the paired length diagnostic
+truth:
+  room: deterministic pyroomacoustics shoebox, 6 x 5 x 2.8 m, absorption 0.25, max_order 12, air absorption on
+  source_xyz_m: [1.2, 2.4, 1.2]
+  receiver_xyz_m: [2.2, 2.4, 1.2]
+  source: session_sim.broadband_transient, amplitude x2, starts at 0.45 s
+  session: canonical_kit, case A, include_reference false, same pipeline for all lengths
+  clock_drift_ppm: 0
+  sample_rate_hz: 48000
+  feature_rate_hz: 16000
+  framing: file_features event mode, one strongest-10ms-energy aligned 1 s window per group, unchanged clamp
+  model: save_edge_model, width 48, 4 blocks, 96-dimensional pooled embedding; untrained proxy only
+seeds:
+  source_root: 1864309271
+  session: 1864309272
+  model: 1864309273
+  calibration_root: 1864309274
+  analysis_root: 1864309275
+  source_derivation: uint32 SeedSequence([source_root, replicate, side, group]); reference and paired side=0, synthetic side=1
+  analysis_derivation: uint32 SeedSequence([analysis_root, replicate, role]); roles 0=fold/E1, 1=E2 permutation, 2/3/4=bootstrap, 5=file group selection
+  calibration_derivation: uint32 SeedSequence([calibration_root, replicate, role]); roles 0=data, 1=fold, 2=permutation
+  session_derivation: existing session_sim SHA256 per-name seeds, including positions/noise/dither/timing
+  reuse_between_conditions: same analysis seeds within a replicate for null and both EQ conditions
+  prohibited: all seeds used in w1-eval or w1-eval-fix evidence and review, including 9191, 777, 31337, 60606, 424242, 5150, 8080, 20261008, 20261009, 20261010
+  freshness_check: scan prior evidence and review text plus derive documented prior source/session seeds before execution
+statistics:
+  E1: existing matched-group joint permutation test, 999 permutations, two views, fail if either view fails at p<=0.05
+  E2: grouped stratified 5-fold logistic L2=1, 2000 fixed-score group bootstraps per seed, median of 3 seed intervals
+  E2_permutation: 199 whole-group label permutations, complete CV refit and refitted preprocessing per assignment, one-sided greater, plus-one p-value
+  E2_decision: upper<0.5 gives inconclusive CV instability; otherwise upper<=0.70 and point<=0.60 gives pass; lower>=0.60 gives fail; otherwise inconclusive
+  power: E1 and E2 each need their own detections on every registered spike-in for every seed; test-level passes without qualification are inconclusive insufficient power
+  control_detection: any E1 or E2 fail; also report each test's detections separately
+  pass_counts: descriptive only, report ungated candidate passes and per-test-power-gated passes
+  paired_length: 300 paired differences in 120 band-statistic features; two-sided Student t with 299 df
+  paired_cutoff: scipy.stats.t.ppf(1 - 0.05/(2*120), 299); zero variance with zero mean => t=0; nonzero constant => rejection
+  shifts: peaking EQ at 3000 Hz, Q=1.5, applied to synthetic event windows at +2 dB and +6 dB
+criteria:
+  null_any_fail_max: 4
+  null_replicates: 20
+  paired_bonferroni_exceedances_max: 0
+  plus2db_detected_min: 19
+  plus6db_detected_min: 20
+  framing_acceptance: pass iff all four criteria hold; otherwise fail
+  label_on_pass: accepted on the TRUTH proxy
+  label_otherwise: implemented, gate not accepted
+E2_calibration_regression:
+  result_label: proxy result
+  runs: 100
+  groups_per_side: 15
+  windows_per_group: 1
+  dimensions: 120
+  generator: exact Gaussian null; sqrt(0.5)*independent normal plus sqrt(0.5)*per-row common normal
+  folds: 5
+  l2: 1.0
+  permutation_replicates: 99
+  alpha: 0.05
+  count_bound: central 95% binomial acceptance interval scipy.stats.binom.interval(0.95,100,0.05), inclusive
+  rule: pass if number of p<=0.05 lies inside the fixed binomial interval; otherwise fail
+  relation_to_framing: separate regression criterion; overall final acceptance requires both calibration and framing pass
+limits:
+  - Every result is proxy; there are no real takes, measured recordings or measured RIRs in this run.
+  - No trained deployment model, training-stream length-invariance or deployment power is validated.
+  - E2 pass remains weak evidence; bootstrap under-coverage is reported, not repaired by the separate permutation test.
+  - Context selection and strongest-peak anchors remain documented limitations.

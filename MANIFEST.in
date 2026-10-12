@@ -1,0 +1,9 @@
+# sdist = complete source form: human documentation, licence notes, helper scripts and tests.
+# (The wheel carries only the package, its package data and the license-files.)
+include README.md USAGE.md MATH.md KNOWN_ISSUES.md THIRD_PARTY.md
+include licences/README.md
+recursive-include src/sensorsim *.md
+graft scripts
+graft tools
+graft tests
+global-exclude __pycache__ *.py[cod]
